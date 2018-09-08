@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'androidx.navigation.safeargs'
+
+ext {
+    core_ktx = "1.0.0-rc02"
+    nav_version = "1.0.0-alpha05"
+    paging_version = "2.0.0-rc01"
+    appcompat_version = "1.0.0-rc02"
+    constraintlayout_version = "1.1.3"
+    lifecycle_version = "1.1.1"
+    kotlin_version = '1.2.60'
+}
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "marshi.android.feedpond"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    // https://mvnrepository.com/artifact/androidx.appcompat/appcompat
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    // https://mvnrepository.com/artifact/androidx.constraintlayout/constraintlayout
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
+    // https://mvnrepository.com/artifact/androidx.paging/paging-common
+    implementation "androidx.paging:paging-common:$paging_version"
+    // optional - RxJava support
+    implementation "androidx.paging:paging-rxjava2:$paging_version"
+
+    // Navigation
+    // https://mvnrepository.com/artifact/android.arch.navigation/navigation-ui
+    implementation "android.arch.navigation:navigation-ui-ktx:$nav_version"
+    implementation "android.arch.navigation:navigation-fragment-ktx:$nav_version"
+
+    // https://mvnrepository.com/artifact/androidx.core/core-ktx
+    implementation "androidx.core:core-ktx:$core_ktx"
+
+    // androidx lifecycle requires minsdk 24
+    // ViewModel and LiveData
+    implementation "android.arch.lifecycle:extensions:$lifecycle_version"
+    implementation "android.arch.lifecycle:runtime:$lifecycle_version"
+    // optional - ReactiveStreams support for LiveData
+    implementation "android.arch.lifecycle:reactivestreams:$lifecycle_version"
+    // optional - Test helpers for LiveData
+    testImplementation "android.arch.core:core-testing:$lifecycle_version"
+}
