@@ -1,9 +1,11 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs'
 
 ext {
+    dagger_version = "2.16"
     core_ktx = "1.0.0-rc02"
     nav_version = "1.0.0-alpha05"
     paging_version = "2.0.0-rc01"
@@ -34,20 +36,32 @@ android {
     }
 }
 
+kapt {
+    javacOptions {
+        option("-Xmaxerrs", 5000)
+    }
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.android.support:support-v4:28.0.0-rc02'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    // https://mvnrepository.com/artifact/androidx.appcompat/appcompat
+    // dagger
+    implementation "com.google.dagger:dagger:$dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$dagger_version"
+    implementation "com.google.dagger:dagger-android:$dagger_version"
+    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:${dagger_version}"
+//    needs?
+//    kapt "com.android.databinding:compiler:3.2.0-rc02"
+
     implementation "androidx.appcompat:appcompat:$appcompat_version"
-    // https://mvnrepository.com/artifact/androidx.constraintlayout/constraintlayout
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
-    // https://mvnrepository.com/artifact/androidx.paging/paging-common
     implementation "androidx.paging:paging-common:$paging_version"
-    // optional - RxJava support
     implementation "androidx.paging:paging-rxjava2:$paging_version"
 
     // Navigation
