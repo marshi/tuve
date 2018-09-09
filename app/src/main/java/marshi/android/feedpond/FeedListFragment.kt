@@ -6,6 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import dagger.android.AndroidInjector
+import dagger.android.support.DaggerFragment
+import dagger.android.support.HasSupportFragmentInjector
+import dagger.android.DispatchingAndroidInjector
+import javax.inject.Inject
+
+
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -19,7 +26,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  *
  */
-class FeedListFragment : Fragment() {
+class FeedListFragment : DaggerFragment() {
     companion object {
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
@@ -34,6 +41,8 @@ class FeedListFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    @Inject
+    lateinit var fragmentInjector: DispatchingAndroidInjector<Fragment>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,5 +58,6 @@ class FeedListFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_feed_list, container, false)
     }
 
+    override fun supportFragmentInjector(): AndroidInjector<Fragment> = fragmentInjector
 
 }
