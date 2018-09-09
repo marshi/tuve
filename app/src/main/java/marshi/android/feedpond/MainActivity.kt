@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector  {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        AndroidInjection.inject(this)
+        AndroidInjection.inject(this  )
         setContentView(R.layout.activity_main)
     }
 
@@ -24,6 +24,11 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector  {
         return findNavController(R.id.nav_host).navigateUp()
     }
 
+    /**
+     * feedpondではandroidxのfragmentを使っていて,
+     * HasSupportFragmentInjectorではsupport.v4のFragmentを使っているから
+     * 型違いでエラー表示になるけど、ビルド・起動は問題ない
+     */
     override fun supportFragmentInjector(): AndroidInjector<Fragment> {
         return supportFragmentInjector
     }
