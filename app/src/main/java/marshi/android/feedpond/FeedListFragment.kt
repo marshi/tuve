@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
+import marshi.android.feedpond.databinding.FragmentFeedListBinding
 import javax.inject.Inject
 
 /**
@@ -21,6 +23,8 @@ class FeedListFragment : Fragment(), HasSupportFragmentInjector {
     @Inject
     lateinit var injector: DispatchingAndroidInjector<Fragment>
 
+    lateinit var binding: FragmentFeedListBinding
+
     companion object {
         @JvmStatic
         fun newInstance() = FeedListFragment()
@@ -30,7 +34,10 @@ class FeedListFragment : Fragment(), HasSupportFragmentInjector {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_feed_list, container, false)
+        binding = DataBindingUtil.inflate(
+            inflater, R.layout.fragment_feed_list, container, false
+        )
+        return binding.root
     }
 
     override fun supportFragmentInjector(): AndroidInjector<Fragment> {
