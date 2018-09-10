@@ -9,7 +9,9 @@ import androidx.fragment.app.Fragment
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
+import marshi.android.domain.FeedItemEntity
 import marshi.android.feedpond.databinding.FragmentFeedListBinding
+import marshi.android.feedpond.feedlist.FeedListAdapter
 import javax.inject.Inject
 
 /**
@@ -37,6 +39,10 @@ class FeedListFragment : Fragment(), HasSupportFragmentInjector {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_feed_list, container, false
         )
+        val adapter = FeedListAdapter()
+        adapter.add(FeedItemEntity("aa", "aiueo"))
+        adapter.add(FeedItemEntity("aa", "aiueo"))
+        binding.recyclerView.adapter = adapter
         return binding.root
     }
 
