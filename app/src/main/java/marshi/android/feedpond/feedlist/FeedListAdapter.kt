@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import marshi.android.domain.FeedItemEntity
+import marshi.android.feedpond.domain.FeedItemEntity
 import marshi.android.feedpond.databinding.FeedItemBinding
 
 class FeedListAdapter : RecyclerView.Adapter<FeedItemHolder>() {

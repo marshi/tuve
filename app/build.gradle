@@ -45,6 +45,7 @@ kapt {
 dependencies {
 
     implementation project(":domain")
+    implementation project(":repository")
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -83,4 +84,8 @@ dependencies {
     implementation "android.arch.lifecycle:reactivestreams:$lifecycle_version"
     // optional - Test helpers for LiveData
     testImplementation "android.arch.core:core-testing:$lifecycle_version"
+
+    // https://mvnrepository.com/artifact/com.rometools/rome
+    compile group: 'com.rometools', name: 'rome', version: '1.11.0'
+
 }
