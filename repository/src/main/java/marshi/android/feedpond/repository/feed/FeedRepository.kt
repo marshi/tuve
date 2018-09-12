@@ -12,7 +12,8 @@ import javax.inject.Inject
 class FeedRepository @Inject constructor() {
 
     fun feed(): Single<List<FeedItemEntity>> {
-        val url = "https://stackoverflow.com/feeds/tag?tagnames=rome"
+        val url = "https://postd.cc/feed/"
+//        val url = "https://stackoverflow.com/feeds/tag?tagnames=rome"
         return Single
                 .create<SyndFeed> {
                     it.onSuccess(SyndFeedInput().build(XmlReader(URL(url))))
