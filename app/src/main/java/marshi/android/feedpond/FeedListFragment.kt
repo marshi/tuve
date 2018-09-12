@@ -8,6 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import dagger.android.support.DaggerFragment
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.rxkotlin.subscribeBy
 import marshi.android.feedpond.databinding.FragmentFeedListBinding
 import marshi.android.feedpond.domain.FeedItemEntity
 import marshi.android.feedpond.feedlist.FeedListAdapter
@@ -43,7 +45,12 @@ class FeedListFragment : DaggerFragment() {
         adapter.add(FeedItemEntity("aa", "aiueo", ""))
         adapter.add(FeedItemEntity("aa", "aiueo", ""))
         binding.recyclerView.adapter = adapter
-        println(feedRepository)
+        feedRepository.feed()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeBy (
+                        onSuccess = ::println,
+                        onError = {println("aiueo");println(it)}
+                )
         return binding.root
     }
 }

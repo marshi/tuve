@@ -92,4 +92,8 @@ dependencies {
     // https://mvnrepository.com/artifact/com.rometools/rome
     compile group: 'com.rometools', name: 'rome', version: '1.11.0'
 
+    implementation "io.reactivex.rxjava2:rxkotlin:2.3.0"
+    // https://mvnrepository.com/artifact/io.reactivex.rxjava2/rxandroid
+    implementation "io.reactivex.rxjava2:rxandroid:2.1.0"
+
 }
