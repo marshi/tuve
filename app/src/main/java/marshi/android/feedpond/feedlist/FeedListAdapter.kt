@@ -27,8 +27,9 @@ class FeedListAdapter : RecyclerView.Adapter<FeedItemHolder>() {
         }
     }
 
-    fun add(item: FeedItemEntity) {
-        items.add(item)
+    fun addAll(list: List<FeedItemEntity>) {
+        items.addAll(list)
+        notifyDataSetChanged()
     }
 }
 
