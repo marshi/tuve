@@ -10,19 +10,21 @@ import java.net.URL
 import javax.inject.Inject
 
 class FeedRepository @Inject constructor() {
-
-    fun feed(): Single<List<FeedItemEntity>> {
-        val url = "https://postd.cc/feed/"
+  
+  fun feed(): Single<List<FeedItemEntity>> {
+    val url = "https://postd.cc/feed/"
 //        val url = "https://stackoverflow.com/feeds/tag?tagnames=rome"
-        return Single
-                .create<SyndFeed> {
-                    it.onSuccess(SyndFeedInput().build(XmlReader(URL(url))))
-                }.subscribeOn(Schedulers.io())
-                .map {
-                    val mediaTitle = it.title
-                    it.entries.map {
-                        FeedItemEntity(mediaTitle, it.title, it.contents.first().value)
-                    }
-                }
-    }
+    return Single
+      .create<SyndFeed> {
+        it.onSuccess(SyndFeedInput().build(XmlReader(URL(url))))
+        println("create ${Thread.currentThread().name}")
+      }.subscribeOn(Schedulers.io())
+      .observeOn(Schedulers.computation())
+      .map {
+        val mediaTitle = it.title
+        it.entries.map {
+          FeedItemEntity(mediaTitle, it.title, it.contents.first().value)
+        }
+      }
+  }
 }

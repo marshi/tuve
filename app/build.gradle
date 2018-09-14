@@ -16,6 +16,17 @@ ext {
 }
 
 android {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+    signingConfigs {
+        releasesign {
+            storeFile file(properties.getProperty("RELEASE_STORE_FILE"))
+            storePassword properties.getProperty("RELEASE_STORE_PASSWORD")
+            keyAlias properties.getProperty('RELEASE_KEY_ALIAS')
+            keyPassword properties.getProperty('RELEASE_KEY_PASSWORD')
+        }
+    }
     compileSdkVersion 28
     defaultConfig {
         applicationId "marshi.android.feedpond"
@@ -29,6 +40,9 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable false
+            jniDebuggable false
+            signingConfig signingConfigs.releasesign
         }
     }
     dataBinding {
@@ -43,11 +57,9 @@ kapt {
 }
 
 dependencies {
-
-    implementation project(":domain")
-    implementation project(":repository")
-
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':domain')
+    implementation project(':repository')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
@@ -59,41 +71,52 @@ dependencies {
     implementation "com.google.dagger:dagger-android:$dagger_version"
     kapt "com.google.dagger:dagger-android-processor:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:${dagger_version}"
-//    needs?
-//    kapt "com.android.databinding:compiler:3.2.0-rc02"
 
+    //    needs?
+
+    //    kapt "com.android.databinding:compiler:3.2.0-rc02"
     implementation "com.android.support:support-v4:$appcompat_version"
     implementation "com.android.support:appcompat-v7:$appcompat_version"
     implementation group: 'com.android.support', name: 'design', version: "$appcompat_version"
-    implementation group: 'com.android.support.constraint', name: 'constraint-layout', version: '1.1.3'
-//    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
-//    implementation "androidx.paging:paging-common:$paging_version"
-//    implementation "androidx.paging:paging-rxjava2:$paging_version"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+
+    //    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
+
+    //    implementation "androidx.paging:paging-common:$paging_version"
+
+    //    implementation "androidx.paging:paging-rxjava2:$paging_version"
 
     // Navigation
+
     // https://mvnrepository.com/artifact/android.arch.navigation/navigation-ui
-    implementation ("android.arch.navigation:navigation-ui-ktx:$nav_version") {
+    implementation("android.arch.navigation:navigation-ui-ktx:$nav_version") {
         exclude group: "com.android.support", module: "design"
     }
     implementation "android.arch.navigation:navigation-fragment-ktx:$nav_version"
 
-//     https://mvnrepository.com/artifact/androidx.core/core-ktx
-//    implementation "androidx.core:core-ktx:$core_ktx"
+    //     https://mvnrepository.com/artifact/androidx.core/core-ktx
+
+    //    implementation "androidx.core:core-ktx:$core_ktx"
 
     // androidx lifecycle requires minsdk 24
+
     // ViewModel and LiveData
     implementation "android.arch.lifecycle:extensions:$lifecycle_version"
     implementation "android.arch.lifecycle:runtime:$lifecycle_version"
+
     // optional - ReactiveStreams support for LiveData
     implementation "android.arch.lifecycle:reactivestreams:$lifecycle_version"
+
     // optional - Test helpers for LiveData
     testImplementation "android.arch.core:core-testing:$lifecycle_version"
 
     // https://mvnrepository.com/artifact/com.rometools/rome
-    compile group: 'com.rometools', name: 'rome', version: '1.11.0'
+    compile 'com.rometools:rome:1.11.0'
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.3.0'
 
-    implementation "io.reactivex.rxjava2:rxkotlin:2.3.0"
     // https://mvnrepository.com/artifact/io.reactivex.rxjava2/rxandroid
-    implementation "io.reactivex.rxjava2:rxandroid:2.1.0"
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
 
+    // https://mvnrepository.com/artifact/com.jakewharton.rxbinding2/rxbinding-recyclerview-v7-kotlin
+    implementation 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7-kotlin:2.1.1'
 }
