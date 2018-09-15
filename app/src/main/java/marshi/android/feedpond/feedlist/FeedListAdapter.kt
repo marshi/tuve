@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.navigation.Navigation
 import marshi.android.feedpond.R
 import marshi.android.feedpond.databinding.FeedItemBinding
@@ -27,7 +28,11 @@ class FeedListAdapter : RecyclerView.Adapter<FeedItemHolder>() {
       title.text = entity.title
       article.text = entity.description
       root.setOnClickListener {
-        Navigation.findNavController(it).navigate(R.id.feed_detail_fragment)
+        val bundle = bundleOf(
+          "article" to entity.description,
+          "title" to entity.title
+        )
+        Navigation.findNavController(it).navigate(R.id.feed_detail_fragment, bundle)
       }
     }
   }

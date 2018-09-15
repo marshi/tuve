@@ -23,7 +23,12 @@ class FeedDetailFragment : Fragment() {
   
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                             savedInstanceState: Bundle?): View? {
+    
     binding = FragmentFeedDetailBinding.inflate(inflater, container, false)
+    binding.apply {
+      article.text = arguments!!.getString("article", "")
+      title.text = arguments!!.getString("title", "")
+    }
     return binding.root
   }
   
