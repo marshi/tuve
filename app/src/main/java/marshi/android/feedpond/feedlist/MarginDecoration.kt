@@ -8,7 +8,7 @@ import android.view.View
 class MarginDecoration private constructor(
   private val top: Int,
   private val bottom: Int
-) : RecyclerView.ItemDecoration(){
+) : RecyclerView.ItemDecoration() {
   
   companion object {
     fun newInstance(
@@ -29,5 +29,5 @@ class MarginDecoration private constructor(
       it.bottom = bottom
     }
   }
-
+  
 }
