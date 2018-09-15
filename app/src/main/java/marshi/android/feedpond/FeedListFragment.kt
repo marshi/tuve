@@ -66,14 +66,12 @@ class FeedListFragment : DaggerFragment() {
   }
   
   private fun load(adapter: FeedListAdapter) {
-    println("load ${Thread.currentThread().threadGroup.name}")
     feedRepository.feed()
       .observeOn(AndroidSchedulers.mainThread())
       .subscribeBy (
         onSuccess = { it ->
           it.forEach { entity ->
             adapter.add(entity)
-            println("onsuccess ${Thread.currentThread().name}")
           }
           loadCompleteSubject.onNext(Unit)
         },
