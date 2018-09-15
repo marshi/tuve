@@ -10,30 +10,14 @@
             android:layout_height="match_parent"
             tools:context=".feeddetail.FeedDetailFragment">
 
-        <TextView
-                android:id="@+id/title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:text="aiueoiuaoiueo"
-                tools:text="タイトルです"
-                />
-
-        <ScrollView
-                app:layout_constraintTop_toBottomOf="@id/title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            <TextView
-                    android:id="@+id/article"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:text="@tools:sample/lorem/random"
-                    android:textColor="@color/body_text"
-                    android:lineSpacingExtra="4dp"
-                    android:textSize="20sp"
-                    />
-        </ScrollView>
+        <WebView
+                android:id="@+id/webview"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="0dp"/>
 
     </android.support.constraint.ConstraintLayout>
 </layout>

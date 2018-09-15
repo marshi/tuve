@@ -3,11 +3,12 @@ package marshi.android.feedpond.feeddetail
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebViewClient
 import marshi.android.feedpond.databinding.FragmentFeedDetailBinding
+import java.net.URI
 
 class FeedDetailFragment : Fragment() {
   
@@ -27,8 +28,10 @@ class FeedDetailFragment : Fragment() {
     
     binding = FragmentFeedDetailBinding.inflate(inflater, container, false)
     binding.apply {
-      article.text = Html.fromHtml(arguments!!.getString("article", ""))
-      title.text = arguments!!.getString("title", "")
+      webview.settings.javaScriptEnabled = true
+      webview.webViewClient = WebViewClient()
+      val uri = arguments!!.get("uri") as URI
+      webview.loadUrl(uri.toString())
     }
     return binding.root
   }

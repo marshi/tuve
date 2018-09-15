@@ -7,6 +7,7 @@ import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
 import marshi.android.feedpond.domain.FeedItemEntity
 import marshi.android.feedpond.ext.decodeNCR
+import java.net.URI
 import java.net.URL
 import javax.inject.Inject
 
@@ -27,7 +28,7 @@ class FeedRepository @Inject constructor() {
             mediaTitle.decodeNCR(),
             it.title.decodeNCR(),
             it.description.value.decodeNCR(),
-            it.contents[0].value
+            URI.create(it.uri)
           )
         }
       }
