@@ -119,4 +119,5 @@ dependencies {
 
     // https://mvnrepository.com/artifact/com.jakewharton.rxbinding2/rxbinding-recyclerview-v7-kotlin
     implementation 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7-kotlin:2.1.1'
+
 }

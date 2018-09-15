@@ -4,7 +4,6 @@ import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,10 +13,10 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.rxkotlin.subscribeBy
-import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.PublishSubject
 import marshi.android.feedpond.databinding.FragmentFeedListBinding
 import marshi.android.feedpond.feedlist.FeedListAdapter
+import marshi.android.feedpond.feedlist.MarginDecoration
 import marshi.android.feedpond.repository.feed.FeedRepository
 import javax.inject.Inject
 
@@ -50,6 +49,7 @@ class FeedListFragment : DaggerFragment() {
     )
     val adapter = FeedListAdapter()
     val layoutManager = LinearLayoutManager(context)
+    binding.recyclerView.addItemDecoration(MarginDecoration.newInstance(this.context!!, 5, 5))
     binding.recyclerView.layoutManager = layoutManager
     binding.recyclerView
       .scrollEvents()
