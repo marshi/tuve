@@ -26,7 +26,8 @@ class FeedRepository @Inject constructor() {
           FeedItemEntity(
             mediaTitle.decodeNCR(),
             it.title.decodeNCR(),
-            it.description.value.decodeNCR()
+            it.description.value.decodeNCR(),
+            it.contents[0].value
           )
         }
       }

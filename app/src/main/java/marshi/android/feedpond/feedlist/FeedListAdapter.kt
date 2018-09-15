@@ -29,7 +29,7 @@ class FeedListAdapter : RecyclerView.Adapter<FeedItemHolder>() {
       article.text = entity.description
       root.setOnClickListener {
         val bundle = bundleOf(
-          "article" to entity.description,
+          "article" to entity.articleHtml,
           "title" to entity.title
         )
         Navigation.findNavController(it).navigate(R.id.feed_detail_fragment, bundle)

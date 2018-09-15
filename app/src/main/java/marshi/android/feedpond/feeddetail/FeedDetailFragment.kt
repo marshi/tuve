@@ -3,6 +3,7 @@ package marshi.android.feedpond.feeddetail
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,7 +27,7 @@ class FeedDetailFragment : Fragment() {
     
     binding = FragmentFeedDetailBinding.inflate(inflater, container, false)
     binding.apply {
-      article.text = arguments!!.getString("article", "")
+      article.text = Html.fromHtml(arguments!!.getString("article", ""))
       title.text = arguments!!.getString("title", "")
     }
     return binding.root
