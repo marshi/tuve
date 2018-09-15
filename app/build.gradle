@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs'
+apply plugin: 'com.google.gms.google-services'
 
 ext {
     dagger_version = "2.16"
@@ -96,7 +97,7 @@ dependencies {
     implementation "android.arch.navigation:navigation-fragment-ktx:$nav_version"
 
     //     https://mvnrepository.com/artifact/androidx.core/core-ktx
-        implementation "androidx.core:core-ktx:$core_ktx"
+    implementation "androidx.core:core-ktx:$core_ktx"
 
     // androidx lifecycle requires minsdk 24
 
@@ -119,5 +120,9 @@ dependencies {
 
     // https://mvnrepository.com/artifact/com.jakewharton.rxbinding2/rxbinding-recyclerview-v7-kotlin
     implementation 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7-kotlin:2.1.1'
+
+    // google services
+    implementation 'com.google.firebase:firebase-core:16.0.3'
+    implementation 'com.google.android.gms:play-services-auth:16.0.0'
 
 }

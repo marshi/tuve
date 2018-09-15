@@ -1,0 +1,58 @@
+{
+  "project_info": {
+    "project_number": "812212350668",
+    "firebase_url": "https://feedpond.firebaseio.com",
+    "project_id": "feedpond",
+    "storage_bucket": "feedpond.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:812212350668:android:42e12c41b6ce76c0",
+        "android_client_info": {
+          "package_name": "marshi.android.feedpond"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "812212350668-fn3lkpt68jabe66fej3lsv6np8gvmt7t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "marshi.android.feedpond",
+            "certificate_hash": "b4c3648d3ea9c39ff11b87b1deaf2020d41ec04c"
+          }
+        },
+        {
+          "client_id": "812212350668-i5rr4g7hh04s03m0ktaib0sbsp4qpo4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6fgRRm6wtosaSDFgOXAcqULcUPuf4FHo"
+        },
+        {
+          "current_key": "AIzaSyC6fgRRm6wtosaSDFgOXAcqULcUPuf4FHo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "812212350668-i5rr4g7hh04s03m0ktaib0sbsp4qpo4f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
