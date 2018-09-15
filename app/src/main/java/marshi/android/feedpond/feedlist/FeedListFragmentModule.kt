@@ -7,9 +7,9 @@ import marshi.android.feedpond.di.FragmentScope
 
 @Module
 interface FeedListFragmentModule {
-
-    @FragmentScope
-    @ContributesAndroidInjector
-    fun contributeFeedListFragment(): FeedListFragment
-
+  
+  @FragmentScope
+  @ContributesAndroidInjector
+  fun contributeFeedListFragment(): FeedListFragment
+  
 }

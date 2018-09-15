@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        >
+
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".feeddetail.FeedDetailFragment">
+
+        <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:text="aiueoiuaoiueo"
+                tools:text="タイトルです"
+                />
+
+        <TextView
+                android:id="@+id/article"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                tools:text="@tools:sample/lorem/random"
+                android:textColor="@color/body_text"
+                android:lineSpacingExtra="4dp"
+                android:textSize="24sp"
+                />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
