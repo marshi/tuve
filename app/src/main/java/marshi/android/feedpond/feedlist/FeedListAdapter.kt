@@ -23,7 +23,7 @@ class FeedListAdapter : RecyclerView.Adapter<FeedItemHolder>() {
     val entity = items[position]
     holder.binding?.apply {
       title.text = entity.title
-      article.text = entity.article
+      article.text = entity.description
     }
   }
   

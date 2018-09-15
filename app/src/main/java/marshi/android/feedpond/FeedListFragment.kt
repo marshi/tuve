@@ -62,15 +62,12 @@ class FeedListFragment : DaggerFragment() {
       }.addTo(disposable)
     binding.recyclerView.adapter = adapter
     load(adapter)
-    println("oncreate ${Thread.currentThread().name}")
     return binding.root
   }
   
   private fun load(adapter: FeedListAdapter) {
     println("load ${Thread.currentThread().threadGroup.name}")
     feedRepository.feed()
-      .observeOn(Schedulers.computation())
-      .map { println("map ${Thread.currentThread().name}") ;it }
       .observeOn(AndroidSchedulers.mainThread())
       .subscribeBy (
         onSuccess = { it ->
