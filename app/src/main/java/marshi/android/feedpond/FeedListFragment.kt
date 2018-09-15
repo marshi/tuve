@@ -51,15 +51,6 @@ class FeedListFragment : DaggerFragment() {
     val layoutManager = LinearLayoutManager(context)
     binding.recyclerView.addItemDecoration(MarginDecoration.newInstance(this.context!!, 5, 5))
     binding.recyclerView.layoutManager = layoutManager
-    binding.recyclerView
-      .scrollEvents()
-      .skipUntil(loadCompleteSubject)
-      .filter { layoutManager.itemCount - 1 <= layoutManager.findLastVisibleItemPosition() }
-      .take(1)
-      .repeat()
-      .subscribe {
-        load(adapter)
-      }.addTo(disposable)
     binding.recyclerView.adapter = adapter
     load(adapter)
     return binding.root
