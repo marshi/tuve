@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class FeedlyRepository {
   
-  fun auth(): Single<String?> {
+  fun search(): Single<String?> {
     val client = Retrofit.Builder().baseUrl("https://cloud.feedly.com")
       .addConverterFactory(GsonConverterFactory.create())
       .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
@@ -19,7 +19,7 @@ class FeedlyRepository {
         .build()
       ).build()
       .create(FeedlyApiClient::class.java)
-    return client.auth().subscribeOn(Schedulers.io())
+    return client.search("query").subscribeOn(Schedulers.io()).map { it.scheme }
   }
   
 }
