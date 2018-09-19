@@ -35,7 +35,7 @@ dependencies {
 
     implementation "io.reactivex.rxjava2:rxkotlin:2.3.0"
     // https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit
-    implementation "com.squareup.retrofit2:retrofit:${retrofit_version}"
+    api "com.squareup.retrofit2:retrofit:${retrofit_version}"
     // https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-gson
     implementation "com.squareup.retrofit2:converter-gson:${retrofit_version}"
     // https://mvnrepository.com/artifact/com.squareup.retrofit2/adapter-rxjava2
