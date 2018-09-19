@@ -12,7 +12,7 @@ import javax.inject.Singleton
 @Module(includes = [
   FeedlyModule::class
 ])
-open class ApiModule {
+class ApiModule {
   
   @FeedlyClient
   @Provides
