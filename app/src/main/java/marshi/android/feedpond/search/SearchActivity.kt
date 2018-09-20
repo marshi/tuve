@@ -21,7 +21,9 @@ class SearchActivity : DaggerAppCompatActivity() {
     super.onCreate(savedInstanceState)
     binding = DataBindingUtil.setContentView(this, R.layout.activity_search)
     binding.button.setOnClickListener {
-      repository.search().observeOn(AndroidSchedulers.mainThread()).subscribe { it -> println(it) }
+      repository.search().observeOn(AndroidSchedulers.mainThread()).subscribe { it ->
+        println("aaaaa: $it")
+      }
     }
   }
   
