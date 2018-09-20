@@ -7,11 +7,14 @@
     <android.support.design.widget.CoordinatorLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".login.LoginActivity">
+            tools:context=".search.SearchActivity">
 
-        <com.google.android.gms.common.SignInButton
-                android:id="@+id/sign_in_button"
+        <android.support.design.button.MaterialButton
+                android:id="@+id/button"
+                style="@style/Theme.MaterialComponents"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:text="ボタンですよ"/>
+
     </android.support.design.widget.CoordinatorLayout>
 </layout>
