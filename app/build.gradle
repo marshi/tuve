@@ -7,14 +7,15 @@ apply plugin: 'com.google.gms.google-services'
 
 ext {
     dagger_version = "2.16"
-    core_ktx = "0.3"
+    core_ktx = "1.0.0"
     nav_version = "1.0.0-alpha05"
     paging_version = "2.0.0-rc01"
-    appcompat_version = "28.0.0-rc02"
+    appcompat_version = "1.0.0"
     constraintlayout_version = "1.1.3"
     lifecycle_version = "1.1.1"
     kotlin_version = '1.2.60'
     retrofit_version = "2.4.0"
+    design_version = "1.0.0"
 }
 
 android {
@@ -30,13 +31,17 @@ android {
         }
     }
     compileSdkVersion 28
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
     defaultConfig {
         applicationId "marshi.android.feedpond"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        testInstrumentationRunner "android."
     }
     buildTypes {
         release {
@@ -63,14 +68,15 @@ dependencies {
     implementation project(':repository')
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.android.support:support-v4:28.0.0-rc02'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
 
     // dagger
     implementation "com.google.dagger:dagger:$dagger_version"
-    implementation "com.google.dagger:dagger-android-support:$dagger_version"
+    implementation ("com.google.dagger:dagger-android-support:$dagger_version") {
+        exclude group: "com.android.support", module: "appcompat-v7"
+    }
     implementation "com.google.dagger:dagger-android:$dagger_version"
     kapt "com.google.dagger:dagger-android-processor:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:${dagger_version}"
@@ -78,12 +84,14 @@ dependencies {
     //    needs?
 
     //    kapt "com.android.databinding:compiler:3.2.0-rc02"
-    implementation "com.android.support:support-v4:$appcompat_version"
-    implementation "com.android.support:appcompat-v7:$appcompat_version"
-    implementation group: 'com.android.support', name: 'design', version: "$appcompat_version"
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
 
-    //    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
+    // https://mvnrepository.com/artifact/com.google.android.material/material
+    implementation "com.google.android.material:material:$design_version"
+
+//    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+
+        implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
 
     //    implementation "androidx.paging:paging-common:$paging_version"
 
@@ -103,27 +111,29 @@ dependencies {
     // androidx lifecycle requires minsdk 24
 
     // ViewModel and LiveData
-    implementation "android.arch.lifecycle:extensions:$lifecycle_version"
-    implementation "android.arch.lifecycle:runtime:$lifecycle_version"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime:2.0.0'
 
     // optional - ReactiveStreams support for LiveData
-    implementation "android.arch.lifecycle:reactivestreams:$lifecycle_version"
+    implementation 'androidx.lifecycle:lifecycle-reactivestreams:2.0.0'
 
     // optional - Test helpers for LiveData
-    testImplementation "android.arch.core:core-testing:$lifecycle_version"
+    testImplementation 'androidx.arch.core:core-testing:2.0.0'
 
     // https://mvnrepository.com/artifact/com.rometools/rome
-    compile 'com.rometools:rome:1.11.0'
+    implementation 'com.rometools:rome:1.11.0'
     implementation 'io.reactivex.rxjava2:rxkotlin:2.3.0'
 
     // https://mvnrepository.com/artifact/io.reactivex.rxjava2/rxandroid
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
 
     // https://mvnrepository.com/artifact/com.jakewharton.rxbinding2/rxbinding-recyclerview-v7-kotlin
-    implementation 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7-kotlin:2.1.1'
+    implementation 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7-kotlin:2.2.0'
 
     // google services
-    implementation 'com.google.firebase:firebase-core:16.0.3'
+    implementation ('com.google.firebase:firebase-core:16.0.3') {
+        exclude group: "com.android.support", module: "support-v4"
+    }
 
     // https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-gson
     implementation "com.squareup.retrofit2:converter-gson:${retrofit_version}"

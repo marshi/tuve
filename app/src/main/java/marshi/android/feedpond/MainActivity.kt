@@ -1,12 +1,12 @@
 package marshi.android.feedpond
 
-import android.databinding.DataBindingUtil
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
-import dagger.android.support.DaggerAppCompatActivity
 import marshi.android.feedpond.databinding.ActivityMainBinding
 
-class MainActivity : DaggerAppCompatActivity() {
+class MainActivity : AppCompatActivity() {
   
   lateinit var binding: ActivityMainBinding
   

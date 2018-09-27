@@ -1,11 +1,11 @@
 package marshi.android.feedpond.search
 
 import android.content.Intent
-import android.databinding.DataBindingUtil
 import android.net.Uri
 import android.os.Bundle
-import android.support.v7.widget.SearchView
-import dagger.android.support.DaggerAppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
+import androidx.databinding.DataBindingUtil
 import io.reactivex.android.schedulers.AndroidSchedulers
 import marshi.android.feedpond.R
 import marshi.android.feedpond.databinding.ActivitySearchBinding
@@ -13,7 +13,7 @@ import marshi.android.feedpond.repository.feedly.FeedlyRepository
 import javax.inject.Inject
 
 
-class SearchActivity : DaggerAppCompatActivity() {
+class SearchActivity : AppCompatActivity() {
   
   private lateinit var binding: ActivitySearchBinding
   

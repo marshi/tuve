@@ -1,6 +1,6 @@
 package marshi.android.feedpond.feedlist
 
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.ViewModel
 
 class FeedListViewModel : ViewModel() {
 

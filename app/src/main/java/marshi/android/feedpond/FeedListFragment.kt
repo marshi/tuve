@@ -1,14 +1,12 @@
 package marshi.android.feedpond
 
-import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.jakewharton.rxbinding2.support.v7.widget.scrollEvents
-import dagger.android.support.DaggerFragment
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
@@ -26,7 +24,7 @@ import javax.inject.Inject
  * create an instance of this fragment.
  *
  */
-class FeedListFragment : DaggerFragment() {
+class FeedListFragment : Fragment() {
   
   @Inject
   lateinit var feedRepository: FeedRepository

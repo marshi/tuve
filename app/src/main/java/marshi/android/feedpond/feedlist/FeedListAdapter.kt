@@ -1,11 +1,11 @@
 package marshi.android.feedpond.feedlist
 
-import android.databinding.DataBindingUtil
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import marshi.android.feedpond.R
 import marshi.android.feedpond.databinding.FeedItemBinding
