@@ -16,6 +16,7 @@ class FeedMediaListViewModel @Inject constructor(
   
   @SuppressLint("CheckResult")
   fun update(query: String) {
+    items.value = mutableListOf()
     repository
       .search(query)
       .observeOn(AndroidSchedulers.mainThread())

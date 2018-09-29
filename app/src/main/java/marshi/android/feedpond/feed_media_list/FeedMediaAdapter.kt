@@ -26,6 +26,11 @@ class FeedMediaAdapter @Inject constructor()
     binding.vm = FeedMediaViewModel(items[position])
   }
   
+  fun clear() {
+    items.removeAll { true }
+    notifyDataSetChanged()
+  }
+  
   fun add(entity: FeedMediaEntity) {
     val size = items.size
     items.add(entity)

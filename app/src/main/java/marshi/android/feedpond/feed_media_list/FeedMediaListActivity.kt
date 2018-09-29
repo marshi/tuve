@@ -2,6 +2,7 @@ package marshi.android.feedpond.feed_media_list
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -29,11 +30,23 @@ class FeedMediaListActivity : AppCompatActivity() {
     binding.recyclerView.addItemDecoration(MarginDecoration.newInstance(this, 5, 5))
     binding.recyclerView.adapter = adapter
     vm.items.observe(this, Observer { list ->
-      list.forEach { adapter.add(it) }
+      if (list.isEmpty()) {
+        adapter.clear()
+      } else {
+        list.forEach { adapter.add(it) }
+      }
     })
-    vm.update("テック")
-    binding.button.setOnClickListener {
-      vm.update("aiueo")
-    }
+    val searchView = binding.searchView
+    searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+      override fun onQueryTextSubmit(query: String?): Boolean {
+        query ?: return false
+        vm.update(query)
+        return true
+      }
+    
+      override fun onQueryTextChange(newText: String?): Boolean {
+        return false
+      }
+    })
   }
 }
