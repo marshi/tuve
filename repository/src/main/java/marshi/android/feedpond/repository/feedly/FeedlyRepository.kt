@@ -6,7 +6,7 @@ import marshi.android.feedpond.domain.FeedMediaEntity
 import javax.inject.Inject
 
 class FeedlyRepository @Inject constructor(
-  val api: FeedlyApiClient
+  private val api: FeedlyApiClient
 ) {
   fun search(query: String): Single<List<FeedMediaEntity>> {
     return api.search(query)

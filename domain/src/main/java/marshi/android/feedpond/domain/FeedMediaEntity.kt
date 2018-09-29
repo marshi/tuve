@@ -10,5 +10,5 @@ data class FeedMediaEntity(
   val title: String,
   val description: String?,
   val uri: URI,
-  val iconUrl: URI
+  val iconUrl: URI?
 )

@@ -7,8 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import marshi.android.feedpond.R
 import marshi.android.feedpond.databinding.FeedMediaItemBinding
 import marshi.android.feedpond.domain.FeedMediaEntity
+import javax.inject.Inject
 
-class FeedMediaAdapter : RecyclerView.Adapter<FeedMediaViewHolder>() {
+class FeedMediaAdapter @Inject constructor()
+  : RecyclerView.Adapter<FeedMediaViewHolder>() {
   
   private val items = mutableListOf<FeedMediaEntity>()
   
