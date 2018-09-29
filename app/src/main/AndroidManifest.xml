@@ -18,7 +18,7 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
         <activity
-                android:name=".search.SearchActivity"
+                android:name=".MainActivity"
                 android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
                 >
             <intent-filter>

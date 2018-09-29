@@ -1,5 +1,6 @@
 package marshi.android.feedpond
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,8 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import dagger.android.AndroidInjection
+import dagger.android.support.AndroidSupportInjection
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
@@ -36,6 +39,11 @@ class FeedListFragment : Fragment() {
   companion object {
     @JvmStatic
     fun newInstance() = FeedListFragment()
+  }
+  
+  override fun onAttach(context: Context?) {
+    AndroidSupportInjection.inject(this)
+    super.onAttach(context)
   }
   
   override fun onCreateView(
