@@ -24,9 +24,9 @@ compileTestKotlin {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     implementation project(":domain")
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     // https://mvnrepository.com/artifact/com.rometools/rome
     implementation group: 'com.rometools', name: 'rome', version: '1.11.0'
 

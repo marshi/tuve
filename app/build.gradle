@@ -8,7 +8,7 @@ apply plugin: 'com.google.gms.google-services'
 ext {
     dagger_version = "2.16"
     core_ktx = "1.0.0"
-    nav_version = "1.0.0-alpha05"
+    nav_version = "1.0.0-alpha06"
     paging_version = "2.0.0-rc01"
     appcompat_version = "1.0.0"
     constraintlayout_version = "1.1.3"
