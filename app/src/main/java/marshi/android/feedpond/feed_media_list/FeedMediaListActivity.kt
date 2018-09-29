@@ -36,14 +36,24 @@ class FeedMediaListActivity : AppCompatActivity() {
         list.forEach { adapter.add(it) }
       }
     })
+    initSearchView()
+  }
+  
+  private fun initSearchView() {
     val searchView = binding.searchView
+    searchView.setOnClickListener {
+      // this is dirty hack. Actually, want to call SearchView#onSearchClicked().
+      // In setIconified method, onSearchClicked is called.
+      // therefore, call setIconified method instead of onSearchClicked.
+      searchView.isIconified = false
+    }
     searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
       override fun onQueryTextSubmit(query: String?): Boolean {
         query ?: return false
         vm.update(query)
-        return true
+        return false
       }
-    
+      
       override fun onQueryTextChange(newText: String?): Boolean {
         return false
       }
