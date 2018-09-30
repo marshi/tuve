@@ -1,38 +1,35 @@
 {
   "project_info": {
-    "project_number": "812212350668",
-    "firebase_url": "https://feedpond.firebaseio.com",
-    "project_id": "feedpond",
-    "storage_bucket": "feedpond.appspot.com"
+    "project_number": "133053812362",
+    "firebase_url": "https://tuve-abfb6.firebaseio.com",
+    "project_id": "tuve-abfb6",
+    "storage_bucket": "tuve-abfb6.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:812212350668:android:42e12c41b6ce76c0",
+        "mobilesdk_app_id": "1:133053812362:android:ac85efd691c18a94",
         "android_client_info": {
-          "package_name": "marshi.android.feedpond"
+          "package_name": "marshi.android.tuve"
         }
       },
       "oauth_client": [
         {
-          "client_id": "812212350668-fn3lkpt68jabe66fej3lsv6np8gvmt7t.apps.googleusercontent.com",
+          "client_id": "133053812362-cdis08a3960opf89i47sd3odp4eleroa.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "marshi.android.feedpond",
+            "package_name": "marshi.android.tuve",
             "certificate_hash": "b4c3648d3ea9c39ff11b87b1deaf2020d41ec04c"
           }
         },
         {
-          "client_id": "812212350668-i5rr4g7hh04s03m0ktaib0sbsp4qpo4f.apps.googleusercontent.com",
+          "client_id": "133053812362-73nc2tb0bf0gqoe8d7hpius41dkprkh7.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC6fgRRm6wtosaSDFgOXAcqULcUPuf4FHo"
-        },
-        {
-          "current_key": "AIzaSyC6fgRRm6wtosaSDFgOXAcqULcUPuf4FHo"
+          "current_key": "AIzaSyDOgaza6-DoNQx62tCjfFynGnzk7q74_o8"
         }
       ],
       "services": {
@@ -43,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "812212350668-i5rr4g7hh04s03m0ktaib0sbsp4qpo4f.apps.googleusercontent.com",
+              "client_id": "133053812362-73nc2tb0bf0gqoe8d7hpius41dkprkh7.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
