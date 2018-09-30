@@ -17,6 +17,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("marshi.android.feedpond", appContext.packageName)
+        assertEquals("marshi.android.tuve", appContext.packageName)
     }
 }
