@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
-          package="marshi.android.feedpond">
+          package="marshi.android.tuve">
 
     <permission android:name="android.permission.INTERNET"/>
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-            android:name=".di.App"
+            android:name="marshi.android.tuve.di.App"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
@@ -18,7 +18,7 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
         <activity
-                android:name=".feed_media_list.FeedMediaListActivity"
+                android:name="marshi.android.tuve.feed_media_list.FeedMediaListActivity"
                 android:theme="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
