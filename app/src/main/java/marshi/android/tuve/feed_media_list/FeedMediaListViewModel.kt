@@ -4,15 +4,15 @@ import android.annotation.SuppressLint
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
-import marshi.android.tuve.domain.FeedMediaEntity
-import marshi.android.tuve.repository.feedly.FeedlyRepository
+import marshi.android.tuve.domain.VideoSnippet
+import marshi.android.tuve.repository.youtube.YoutubeRepository
 import javax.inject.Inject
 
 class FeedMediaListViewModel @Inject constructor(
-  private val repository: FeedlyRepository
+  private val repository: YoutubeRepository
 ) : ViewModel() {
   
-  val items: MutableLiveData<List<FeedMediaEntity>> = MutableLiveData()
+  val items: MutableLiveData<List<VideoSnippet>> = MutableLiveData()
   
   @SuppressLint("CheckResult")
   fun update(query: String) {
@@ -22,7 +22,7 @@ class FeedMediaListViewModel @Inject constructor(
       .observeOn(AndroidSchedulers.mainThread())
       .subscribe(
         { items.value = it },
-        { throw it }
+        { println(it) }
       )
   }
   

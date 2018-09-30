@@ -6,13 +6,15 @@ import dagger.Module
 import dagger.Provides
 import marshi.android.tuve.di.annotation.IdentityGson
 import marshi.android.tuve.di.api.FeedlyModule
+import marshi.android.tuve.di.api.YoutubeModule
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module(includes = [
-  FeedlyModule::class
+  FeedlyModule::class,
+  YoutubeModule::class
 ])
 class ApiModule {
   

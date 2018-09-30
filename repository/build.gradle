@@ -40,4 +40,5 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:${retrofit_version}"
     // https://mvnrepository.com/artifact/com.squareup.retrofit2/adapter-rxjava2
     implementation "com.squareup.retrofit2:adapter-rxjava2:${retrofit_version}"
+
 }
