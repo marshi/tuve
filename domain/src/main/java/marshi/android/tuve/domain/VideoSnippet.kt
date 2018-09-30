@@ -5,7 +5,7 @@ class VideoSnippet(
   val channelId: String,
   val title: String,
   val description: String,
-  val thumbnails: VideoThumbnail,
+  val thumbnail: VideoThumbnail,
   val channelTitle: String,
   val liveBroadcastContent: String
 )
