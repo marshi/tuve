@@ -12,7 +12,7 @@ interface YoutubeApiClient {
     @Query("part") part: String,
     @Query("channelId") channelId: String?,
     @Query("order") order: String?,
-    @Query("key") key: String?,
+    @Query("key") key: String,
     @Query("maxResults") limit: Int
   ): Single<SearchResponse>
 }

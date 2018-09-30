@@ -42,6 +42,7 @@ android {
         versionCode 1
         versionName "1.0"
 //        testInstrumentationRunner "android."
+        buildConfigField("String", "youtubeApiKey", "\"${properties.getProperty('YOUTUBE_API_KEY')}\"")
     }
     buildTypes {
         release {
