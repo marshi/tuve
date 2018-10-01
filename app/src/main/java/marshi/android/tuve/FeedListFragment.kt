@@ -16,7 +16,7 @@ import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.subjects.PublishSubject
 import marshi.android.tuve.databinding.FragmentFeedListBinding
 import marshi.android.tuve.feedlist.FeedListAdapter
-import marshi.android.tuve.feedlist.MarginDecoration
+import marshi.android.tuve.uiUtil.MarginDecoration
 import marshi.android.tuve.repository.feed.FeedRepository
 import javax.inject.Inject
 

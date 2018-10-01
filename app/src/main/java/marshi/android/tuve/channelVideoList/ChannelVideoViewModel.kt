@@ -4,5 +4,5 @@ import androidx.lifecycle.ViewModel
 import marshi.android.tuve.domain.VideoSnippetEntity
 
 class ChannelVideoViewModel(
-  val feedMediaEntity: VideoSnippetEntity
+  val videoSnippetEntity: VideoSnippetEntity
 ) : ViewModel()

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.android.AndroidInjection
 import marshi.android.tuve.R
 import marshi.android.tuve.databinding.ActivityFeedMediaListBinding
-import marshi.android.tuve.feedlist.MarginDecoration
+import marshi.android.tuve.uiUtil.MarginDecoration
 import javax.inject.Inject
 
 class ChannelVideoListActivity : AppCompatActivity() {

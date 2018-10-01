@@ -1,4 +1,4 @@
-package marshi.android.tuve.feedlist
+package marshi.android.tuve.uiUtil
 
 import android.content.Context
 import android.graphics.Rect
