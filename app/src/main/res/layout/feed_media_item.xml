@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="marshi.android.tuve.feed_media_list.FeedMediaViewModel" />
+            type="marshi.android.tuve.channelVideoList.FeedMediaViewModel" />
     </data>
 
     <androidx.cardview.widget.CardView

@@ -1,4 +1,4 @@
-package marshi.android.tuve.feed_media_list
+package marshi.android.tuve.channelVideoList
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
