@@ -1,6 +1,6 @@
 package marshi.android.tuve.domain
 
-class VideoSnippet(
+class VideoSnippetEntity(
   val publishedAt: String,
   val channelId: String,
   val title: String,

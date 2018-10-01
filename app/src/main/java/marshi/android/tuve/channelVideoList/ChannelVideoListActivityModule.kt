@@ -5,8 +5,8 @@ import dagger.android.ContributesAndroidInjector
 import marshi.android.tuve.di.ActivityScope
 
 @Module
-interface FeedMediaListActivityModule {
+interface ChannelVideoListActivityModule {
   @ActivityScope
   @ContributesAndroidInjector
-  fun contributeActivity(): FeedMediaListActivity
+  fun contributeActivity(): ChannelVideoListActivity
 }

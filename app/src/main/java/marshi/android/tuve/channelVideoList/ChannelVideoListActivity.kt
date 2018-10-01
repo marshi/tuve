@@ -12,14 +12,14 @@ import marshi.android.tuve.databinding.ActivityFeedMediaListBinding
 import marshi.android.tuve.feedlist.MarginDecoration
 import javax.inject.Inject
 
-class FeedMediaListActivity : AppCompatActivity() {
+class ChannelVideoListActivity : AppCompatActivity() {
   
   lateinit var binding: ActivityFeedMediaListBinding
   @Inject
-  lateinit var vm: FeedMediaListViewModel
+  lateinit var vm: ChannelVideoListViewModel
   
   @Inject
-  lateinit var adapter: FeedMediaAdapter
+  lateinit var adapter: ChannelVideoAdapter
   
   override fun onCreate(savedInstanceState: Bundle?) {
     AndroidInjection.inject(this)

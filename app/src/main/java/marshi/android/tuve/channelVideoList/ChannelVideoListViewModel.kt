@@ -4,15 +4,15 @@ import android.annotation.SuppressLint
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
-import marshi.android.tuve.domain.VideoSnippet
+import marshi.android.tuve.domain.VideoSnippetEntity
 import marshi.android.tuve.repository.youtube.YoutubeRepository
 import javax.inject.Inject
 
-class FeedMediaListViewModel @Inject constructor(
+class ChannelVideoListViewModel @Inject constructor(
   private val repository: YoutubeRepository
 ) : ViewModel() {
   
-  val items: MutableLiveData<List<VideoSnippet>> = MutableLiveData()
+  val items: MutableLiveData<List<VideoSnippetEntity>> = MutableLiveData()
   
   @SuppressLint("CheckResult")
   fun update(query: String) {

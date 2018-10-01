@@ -1,6 +1,6 @@
 package marshi.android.tuve.repository.youtube.response
 
-import marshi.android.tuve.domain.VideoSnippet
+import marshi.android.tuve.domain.VideoSnippetEntity
 import marshi.android.tuve.domain.VideoThumbnail
 import java.net.URL
 
@@ -11,10 +11,10 @@ class SearchResponse(
   val pageInfo: PageInfo,
   val items: List<Item>
 ) {
-  fun convert(): List<VideoSnippet> {
+  fun convert(): List<VideoSnippetEntity> {
     return items.map {
       it.snippet.let { snippet ->
-        VideoSnippet(
+        VideoSnippetEntity(
           snippet.publishedAt,
           snippet.channelId,
           snippet.title,

@@ -7,7 +7,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".channelVideoList.FeedMediaListActivity">
+            tools:context=".channelVideoList.ChannelVideoListActivity">
 
         <com.google.android.material.card.MaterialCardView
                 android:id="@+id/search_card"
