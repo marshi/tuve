@@ -20,12 +20,6 @@ import marshi.android.tuve.uiUtil.MarginDecoration
 import marshi.android.tuve.repository.feed.FeedRepository
 import javax.inject.Inject
 
-/**
- * A simple [Fragment] subclass.
- * Use the [RecommendVideoListFragment.newInstance] factory method to
- * create an instance of this fragment.
- *
- */
 class RecommendVideoListFragment : Fragment() {
   
   @Inject
