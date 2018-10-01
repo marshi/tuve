@@ -1,4 +1,4 @@
-package marshi.android.tuve.feedlist
+package marshi.android.tuve.recommendVideoList
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -6,7 +6,7 @@ import marshi.android.tuve.FeedListFragment
 import marshi.android.tuve.di.FragmentScope
 
 @Module
-interface FeedListFragmentModule {
+interface RecommendVideoListFragmentModule {
   
   @FragmentScope
   @ContributesAndroidInjector

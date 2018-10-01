@@ -15,7 +15,7 @@ import io.reactivex.rxkotlin.addTo
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.subjects.PublishSubject
 import marshi.android.tuve.databinding.FragmentFeedListBinding
-import marshi.android.tuve.feedlist.FeedListAdapter
+import marshi.android.tuve.recommendVideoList.RecommendVideoListAdapter
 import marshi.android.tuve.uiUtil.MarginDecoration
 import marshi.android.tuve.repository.feed.FeedRepository
 import javax.inject.Inject
@@ -52,7 +52,7 @@ class FeedListFragment : Fragment() {
     binding = DataBindingUtil.inflate(
       inflater, R.layout.fragment_feed_list, container, false
     )
-    val adapter = FeedListAdapter()
+    val adapter = RecommendVideoListAdapter()
     val layoutManager = LinearLayoutManager(context)
     binding.recyclerView.addItemDecoration(MarginDecoration.newInstance(this.context!!, 5, 5))
     binding.recyclerView.layoutManager = layoutManager
@@ -61,7 +61,7 @@ class FeedListFragment : Fragment() {
     return binding.root
   }
   
-  private fun load(adapter: FeedListAdapter) {
+  private fun load(adapter: RecommendVideoListAdapter) {
     feedRepository.feed()
       .observeOn(AndroidSchedulers.mainThread())
       .subscribeBy (

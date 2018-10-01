@@ -1,4 +1,4 @@
-package marshi.android.tuve.feedlist
+package marshi.android.tuve.recommendVideoList
 
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +11,7 @@ import marshi.android.tuve.R
 import marshi.android.tuve.databinding.FeedItemBinding
 import marshi.android.tuve.domain.FeedEntity
 
-class FeedListAdapter : RecyclerView.Adapter<FeedItemHolder>() {
+class RecommendVideoListAdapter : RecyclerView.Adapter<FeedItemHolder>() {
   
   private val items = mutableListOf<FeedEntity>()
   
