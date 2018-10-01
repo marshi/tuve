@@ -1,4 +1,4 @@
-package marshi.android.tuve
+package marshi.android.tuve.recommendVideoList
 
 import android.content.Context
 import android.os.Bundle
@@ -14,19 +14,19 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.subjects.PublishSubject
+import marshi.android.tuve.R
 import marshi.android.tuve.databinding.FragmentFeedListBinding
-import marshi.android.tuve.recommendVideoList.RecommendVideoListAdapter
 import marshi.android.tuve.uiUtil.MarginDecoration
 import marshi.android.tuve.repository.feed.FeedRepository
 import javax.inject.Inject
 
 /**
  * A simple [Fragment] subclass.
- * Use the [FeedListFragment.newInstance] factory method to
+ * Use the [RecommendVideoListFragment.newInstance] factory method to
  * create an instance of this fragment.
  *
  */
-class FeedListFragment : Fragment() {
+class RecommendVideoListFragment : Fragment() {
   
   @Inject
   lateinit var feedRepository: FeedRepository
@@ -37,7 +37,7 @@ class FeedListFragment : Fragment() {
   
   companion object {
     @JvmStatic
-    fun newInstance() = FeedListFragment()
+    fun newInstance() = RecommendVideoListFragment()
   }
   
   override fun onAttach(context: Context?) {
