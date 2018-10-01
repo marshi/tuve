@@ -1,4 +1,4 @@
-package marshi.android.tuve
+package marshi.android.tuve.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +8,7 @@ import androidx.navigation.findNavController
 import dagger.android.AndroidInjection
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
+import marshi.android.tuve.R
 import marshi.android.tuve.databinding.ActivityMainBinding
 import javax.inject.Inject
 
