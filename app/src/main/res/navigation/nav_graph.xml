@@ -9,7 +9,7 @@
             android:id="@+id/feed_list_fragment"
             android:name="marshi.android.tuve.recommendVideoList.RecommendVideoListFragment"
             android:label="fragment_feed_list"
-            tools:layout="@layout/fragment_feed_list">
+            tools:layout="@layout/fragment_recommend_video_list">
         <action
                 android:id="@+id/action_feedListFragment_to_feedDetailFragment"
                 app:destination="@id/feed_detail_fragment"

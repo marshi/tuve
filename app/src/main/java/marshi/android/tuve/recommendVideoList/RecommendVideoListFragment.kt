@@ -44,7 +44,7 @@ class RecommendVideoListFragment : Fragment() {
     savedInstanceState: Bundle?
   ): View? {
     binding = DataBindingUtil.inflate(
-      inflater, R.layout.fragment_feed_list, container, false
+      inflater, R.layout.fragment_recommend_video_list, container, false
     )
     val adapter = RecommendVideoListAdapter()
     val layoutManager = LinearLayoutManager(context)
