@@ -1,6 +1,7 @@
 package marshi.android.tuve.activity
 
 import android.os.Bundle
+import android.view.MenuInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -14,13 +15,17 @@ import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
   
-  @Inject lateinit var supportFragmentInjector: DispatchingAndroidInjector<Fragment>
+  @Inject
+  lateinit var supportFragmentInjector: DispatchingAndroidInjector<Fragment>
   lateinit var binding: ActivityMainBinding
   
   override fun onCreate(savedInstanceState: Bundle?) {
     AndroidInjection.inject(this)
     super.onCreate(savedInstanceState)
     binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+    val tabLayout = binding.tabLayout
+    val newTab = tabLayout.newTab()
+    tabLayout.addTab(newTab.setIcon(R.drawable.ic_home).setText("ホーム"))
   }
   
   override fun onSupportNavigateUp(): Boolean =

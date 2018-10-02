@@ -15,7 +15,7 @@ import io.reactivex.rxkotlin.addTo
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.subjects.PublishSubject
 import marshi.android.tuve.R
-import marshi.android.tuve.databinding.FragmentFeedListBinding
+import marshi.android.tuve.databinding.FragmentRecommendVideoListBinding
 import marshi.android.tuve.uiUtil.MarginDecoration
 import marshi.android.tuve.repository.feed.FeedRepository
 import javax.inject.Inject
@@ -25,7 +25,7 @@ class RecommendVideoListFragment : Fragment() {
   @Inject
   lateinit var feedRepository: FeedRepository
   
-  lateinit var binding: FragmentFeedListBinding
+  lateinit var binding: FragmentRecommendVideoListBinding
   private val disposable = CompositeDisposable()
   private val loadCompleteSubject = PublishSubject.create<Unit>()
   
