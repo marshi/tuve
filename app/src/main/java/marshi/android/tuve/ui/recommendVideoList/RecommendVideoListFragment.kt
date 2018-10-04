@@ -1,6 +1,5 @@
 package marshi.android.tuve.ui.recommendVideoList
 
-import android.app.Activity
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -17,8 +16,8 @@ import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.subjects.PublishSubject
 import marshi.android.tuve.R
 import marshi.android.tuve.databinding.FragmentRecommendVideoListBinding
-import marshi.android.tuve.uiUtil.MarginDecoration
 import marshi.android.tuve.repository.feed.FeedRepository
+import marshi.android.tuve.uiUtil.MarginDecoration
 import javax.inject.Inject
 
 class RecommendVideoListFragment : Fragment() {

@@ -1,33 +1,39 @@
 package marshi.android.tuve.ui.channelVideoList
 
+import android.content.Context
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
-import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import dagger.android.AndroidInjection
-import marshi.android.tuve.R
-import marshi.android.tuve.databinding.ActivityFeedMediaListBinding
+import dagger.android.support.AndroidSupportInjection
+import marshi.android.tuve.databinding.FragmentFeedMediaListBinding
 import marshi.android.tuve.uiUtil.MarginDecoration
 import javax.inject.Inject
 
-class ChannelVideoListActivity : AppCompatActivity() {
+class ChannelVideoListFragment : Fragment() {
   
-  lateinit var binding: ActivityFeedMediaListBinding
+  lateinit var binding: FragmentFeedMediaListBinding
   @Inject
   lateinit var vm: ChannelVideoListViewModel
   
   @Inject
   lateinit var adapter: ChannelVideoAdapter
   
-  override fun onCreate(savedInstanceState: Bundle?) {
-    AndroidInjection.inject(this)
-    super.onCreate(savedInstanceState)
-    binding = DataBindingUtil.setContentView(this, R.layout.activity_feed_media_list)
+  override fun onAttach(context: Context?) {
+    AndroidSupportInjection.inject(this)
+    super.onAttach(context)
+  }
+  
+  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    super.onCreateView(inflater, container, savedInstanceState)
+    binding = FragmentFeedMediaListBinding.inflate(inflater, container, false)
     val adapter = adapter
-    binding.recyclerView.layoutManager = LinearLayoutManager(this)
-    binding.recyclerView.addItemDecoration(MarginDecoration.newInstance(this, 5, 5))
+    binding.recyclerView.layoutManager = LinearLayoutManager(activity)
+    binding.recyclerView.addItemDecoration(MarginDecoration.newInstance(context!!, 5, 5))
     binding.recyclerView.adapter = adapter
     vm.items.observe(this, Observer { list ->
       if (list.isEmpty()) {
@@ -37,6 +43,7 @@ class ChannelVideoListActivity : AppCompatActivity() {
       }
     })
     initSearchView()
+    return binding.root
   }
   
   private fun initSearchView() {

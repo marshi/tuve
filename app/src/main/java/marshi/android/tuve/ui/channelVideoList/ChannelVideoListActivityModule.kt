@@ -8,5 +8,5 @@ import marshi.android.tuve.di.ActivityScope
 interface ChannelVideoListActivityModule {
   @ActivityScope
   @ContributesAndroidInjector
-  fun contributeActivity(): ChannelVideoListActivity
+  fun contributeActivity(): ChannelVideoListFragment
 }
