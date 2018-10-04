@@ -1,4 +1,4 @@
-package marshi.android.tuve.feeddetail
+package marshi.android.tuve.ui.feeddetail
 
 
 import android.os.Bundle

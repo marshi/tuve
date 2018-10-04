@@ -1,4 +1,4 @@
-package marshi.android.tuve.search
+package marshi.android.tuve.ui.search
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector

@@ -1,4 +1,4 @@
-package marshi.android.tuve.recommendVideoList
+package marshi.android.tuve.ui.recommendVideoList
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector

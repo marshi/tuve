@@ -1,4 +1,4 @@
-package marshi.android.tuve.search
+package marshi.android.tuve.ui.search
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

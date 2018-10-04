@@ -1,4 +1,4 @@
-package marshi.android.tuve.recommendVideoList
+package marshi.android.tuve.ui.recommendVideoList
 
 import android.view.LayoutInflater
 import android.view.View

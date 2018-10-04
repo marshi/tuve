@@ -1,4 +1,4 @@
-package marshi.android.tuve.channelVideoList
+package marshi.android.tuve.ui.channelVideoList
 
 import android.view.LayoutInflater
 import android.view.View

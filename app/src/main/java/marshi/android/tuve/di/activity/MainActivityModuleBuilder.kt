@@ -4,7 +4,7 @@ import dagger.Module
 import dagger.android.ContributesAndroidInjector
 import marshi.android.tuve.activity.MainActivity
 import marshi.android.tuve.di.ActivityScope
-import marshi.android.tuve.recommendVideoList.RecommendVideoListFragmentModule
+import marshi.android.tuve.ui.recommendVideoList.RecommendVideoListFragmentModule
 
 @Module interface MainActivityModuleBuilder {
     @ActivityScope
