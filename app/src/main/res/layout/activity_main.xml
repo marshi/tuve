@@ -29,18 +29,21 @@
             app:tabTextAppearance="@style/TabTextAppearance">
 
             <com.google.android.material.tabs.TabItem
+                android:id="@+id/nav_home"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:icon="@drawable/ic_home"
                 android:text="@string/bottom_tab_home" />
 
             <com.google.android.material.tabs.TabItem
+                android:id="@+id/nav_follow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:icon="@drawable/ic_favorite"
                 android:text="@string/bottom_tab_follow_list" />
 
             <com.google.android.material.tabs.TabItem
+                android:id="@+id/nav_fan_art"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:icon="@drawable/ic_fan_art"

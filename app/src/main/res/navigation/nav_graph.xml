@@ -20,6 +20,7 @@
         <argument
                 app:argType="string"
                 android:name="article"/>
+        <action android:id="@+id/action_feedListFragment_to_followFragment" app:destination="@id/follow_fragment" />
     </fragment>
 
     <fragment
@@ -27,4 +28,9 @@
             android:name="marshi.android.tuve.ui.feeddetail.FeedDetailFragment"
             android:label="fragment_feed_detail"
             tools:layout="@layout/fragment_feed_detail"/>
+    <fragment
+        android:id="@+id/follow_fragment"
+        android:name="marshi.android.tuve.ui.follow.FollowFragment"
+        android:label="fragment_follow"
+        tools:layout="@layout/fragment_follow" />
 </navigation>
