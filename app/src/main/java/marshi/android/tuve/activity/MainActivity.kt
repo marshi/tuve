@@ -23,9 +23,6 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
     AndroidInjection.inject(this)
     super.onCreate(savedInstanceState)
     binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-    val tabLayout = binding.tabLayout
-    val newTab = tabLayout.newTab()
-    tabLayout.addTab(newTab.setIcon(R.drawable.ic_home).setText("ホーム"))
   }
   
   override fun onSupportNavigateUp(): Boolean =

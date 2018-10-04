@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">FeedPond</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_login">LoginActivity</string>
+    <string name="bottom_tab_home">ホーム</string>
+    <string name="bottom_tab_follow_list">フォロー</string>
+    <string name="bottom_tab_fan_art">ファンアート</string>
 </resources>
