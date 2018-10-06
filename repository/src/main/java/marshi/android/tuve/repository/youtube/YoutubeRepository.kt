@@ -3,9 +3,13 @@ package marshi.android.tuve.repository.youtube
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
 import marshi.android.tuve.domain.RecommendVideoSnippetEntity
+import marshi.android.tuve.domain.VideoDetailEntity
+import marshi.android.tuve.domain.VideoId
 import marshi.android.tuve.domain.VideoSnippetEntity
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class YoutubeRepository @Inject constructor(
   private val api: YoutubeApiClient,
   private val key: YoutubeApiKey
@@ -30,5 +34,14 @@ class YoutubeRepository @Inject constructor(
       limit = 10
     ).subscribeOn(Schedulers.io())
       .map { it.convertToRecommend() }
+  }
+
+  fun videoDetail(videoId: VideoId): Single<VideoDetailEntity> {
+    return api.videoDetail(
+      part = "player",
+      videoId = videoId.id,
+      key = key.value
+    ).subscribeOn(Schedulers.io())
+      .map { it.convertToVideoDetail() }
   }
 }

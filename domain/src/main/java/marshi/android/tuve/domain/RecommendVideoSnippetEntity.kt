@@ -1,6 +1,7 @@
 package marshi.android.tuve.domain
 
 class RecommendVideoSnippetEntity(
+  val videoId: VideoId,
   val publishedAt: String,
   val channelId: String,
   val title: String,

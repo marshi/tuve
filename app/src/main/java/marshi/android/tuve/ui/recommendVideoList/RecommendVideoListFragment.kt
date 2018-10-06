@@ -19,6 +19,7 @@ class RecommendVideoListFragment : Fragment() {
 
     lateinit var binding: FragmentRecommendVideoListBinding
     @Inject internal lateinit var vm: RecommendVideoListViewModel
+    @Inject internal lateinit var adapter: RecommendVideoListAdapter
 
     override fun onAttach(context: Context?) {
         AndroidSupportInjection.inject(this)
@@ -32,7 +33,6 @@ class RecommendVideoListFragment : Fragment() {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_recommend_video_list, container, false
         )
-        val adapter = RecommendVideoListAdapter()
         val layoutManager = LinearLayoutManager(context)
         binding.recyclerView.addItemDecoration(MarginDecoration.newInstance(this.context!!, 5, 5))
         binding.recyclerView.layoutManager = layoutManager
@@ -45,3 +45,4 @@ class RecommendVideoListFragment : Fragment() {
         return binding.root
     }
 }
+

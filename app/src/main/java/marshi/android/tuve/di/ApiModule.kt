@@ -12,33 +12,34 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-@Module(includes = [
-  FeedlyModule::class,
-  YoutubeModule::class
-])
+@Module(
+    includes = [
+        FeedlyModule::class,
+        YoutubeModule::class
+    ]
+)
 class ApiModule {
-  
-  @Provides
-  @Singleton
-  fun provideRetrofitBuilder(): Retrofit.Builder {
-    return Retrofit.Builder()
-      .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.IDENTITY).create()))
-      .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-  }
-  
-  @Provides
-  @Singleton
-  fun provideGsonBuilder(): GsonBuilder {
-    return GsonBuilder()
-  }
-  
-  @Provides
-  @IdentityGson
-  fun provideIdentityGson(
-    builder: GsonBuilder
-  ): GsonBuilder {
-    return builder
-      .setFieldNamingPolicy(FieldNamingPolicy.IDENTITY)
-  }
 
+    @Provides
+    @Singleton
+    fun provideRetrofitBuilder(): Retrofit.Builder {
+        return Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.IDENTITY).create()))
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+    }
+
+    @Provides
+    @Singleton
+    fun provideGsonBuilder(): GsonBuilder {
+        return GsonBuilder()
+    }
+
+    @Provides
+    @IdentityGson
+    fun provideIdentityGson(
+        builder: GsonBuilder
+    ): GsonBuilder {
+        return builder
+            .setFieldNamingPolicy(FieldNamingPolicy.IDENTITY)
+    }
 }

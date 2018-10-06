@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_recommend_video_list">
         <action
             android:id="@+id/action_feedListFragment_to_feedDetailFragment"
-            app:destination="@id/feed_detail_fragment"
+            app:destination="@id/video_detail_fragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
@@ -26,10 +26,10 @@
     </fragment>
 
     <fragment
-        android:id="@+id/feed_detail_fragment"
-        android:name="marshi.android.tuve.ui.feeddetail.FeedDetailFragment"
-        android:label="fragment_feed_detail"
-        tools:layout="@layout/fragment_feed_detail" />
+        android:id="@+id/video_detail_fragment"
+        android:name="marshi.android.tuve.ui.videoDetail.VideoDetailFragment"
+        android:label="fragment_video_detail"
+        tools:layout="@layout/fragment_video_detail"/>
     <fragment
         android:id="@+id/follow_fragment"
         android:name="marshi.android.tuve.ui.follow.FollowFragment"
