@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
 
             override fun onTabSelected(tab: TabLayout.Tab) {
                 when (tab.position) {
-                    0 -> findNavController(R.id.nav_host).navigate(R.id.channelVideoListFragment)
+                    0 -> findNavController(R.id.nav_host).navigate(R.id.recommendVideoListFragment)
                     1 -> findNavController(R.id.nav_host).navigate(R.id.follow_fragment)
                     2 -> {
                     }
