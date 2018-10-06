@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener
-import com.pierfrancescosoffritti.androidyoutubeplayer.player.listeners.YouTubePlayerInitListener
 import dagger.android.support.AndroidSupportInjection
 import marshi.android.tuve.databinding.FragmentVideoDetailBinding
 
@@ -33,7 +32,7 @@ class VideoDetailFragment : Fragment() {
                     it.loadVideo(videoId!!, 0f)
                 }
             })
-        }, true)
+        }, false)
         return binding.root
     }
 }
