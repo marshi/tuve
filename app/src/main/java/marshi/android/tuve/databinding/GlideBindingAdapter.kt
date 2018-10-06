@@ -8,8 +8,8 @@ import java.net.URL
 
 @BindingAdapter("glideUrl")
 fun loadImage(view: AppCompatImageView, url: URL) {
-  GlideApp.with(view)
-    .load(Uri.parse(url.toString()))
-    .centerCrop()
-    .into(view)
+    GlideApp.with(view)
+        .load(Uri.parse(url.toString()))
+        .centerCrop()
+        .into(view)
 }

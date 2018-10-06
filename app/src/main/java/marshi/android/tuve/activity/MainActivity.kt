@@ -15,8 +15,7 @@ import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
 
-    @Inject
-    lateinit var supportFragmentInjector: DispatchingAndroidInjector<Fragment>
+    @Inject lateinit var supportFragmentInjector: DispatchingAndroidInjector<Fragment>
     lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +41,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
     }
 
     override fun onSupportNavigateUp(): Boolean =
-            findNavController(R.id.nav_host).navigateUp()
+        findNavController(R.id.nav_host).navigateUp()
 
     override fun supportFragmentInjector() = supportFragmentInjector
 }

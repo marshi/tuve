@@ -9,53 +9,46 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import marshi.android.tuve.R
 import marshi.android.tuve.databinding.FeedItemBinding
-import marshi.android.tuve.domain.FeedEntity
+import marshi.android.tuve.domain.VideoSnippetEntity
 
-class RecommendVideoListAdapter : RecyclerView.Adapter<FeedItemHolder>() {
-  
-  private val items = mutableListOf<FeedEntity>()
-  
-  override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedItemHolder {
-    val binding = FeedItemBinding.inflate(LayoutInflater.from(parent.context))
-    return FeedItemHolder(binding.root)
-  }
-  
-  override fun getItemCount() = items.size
-  
-  override fun onBindViewHolder(holder: FeedItemHolder, position: Int) {
-    val entity = items[position]
-    holder.binding?.apply {
-      title.text = entity.title
-      article.text = entity.description
-      root.setOnClickListener {
-        val bundle = bundleOf(
-          "uri" to entity.uri,
-          "title" to entity.title
-        )
-        Navigation.findNavController(it).navigate(R.id.feed_detail_fragment, bundle)
-      }
+class RecommendVideoListAdapter : RecyclerView.Adapter<RecommendVideoItemHolder>() {
+
+    private val items = mutableListOf<VideoSnippetEntity>()
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecommendVideoItemHolder {
+        val binding = FeedItemBinding.inflate(LayoutInflater.from(parent.context))
+        return RecommendVideoItemHolder(binding.root)
     }
-  }
-  
-  fun addAll(list: List<FeedEntity>) {
-    items.addAll(list)
-    notifyDataSetChanged()
-  }
-  
-  fun add(media: FeedEntity) {
-    items.add(media)
-    notifyItemInserted(items.indexOf(media))
-  }
-  
+
+    override fun getItemCount() = items.size
+
+    override fun onBindViewHolder(holder: RecommendVideoItemHolder, position: Int) {
+        val entity = items[position]
+        holder.binding?.apply {
+            title.text = entity.title
+            article.text = entity.description
+            root.setOnClickListener {
+                val bundle = bundleOf(
+                    "uri" to "",
+                    "title" to entity.title
+                )
+                Navigation.findNavController(it).navigate(R.id.feed_detail_fragment, bundle)
+            }
+        }
+    }
+
+    fun addAll(list: List<VideoSnippetEntity>) {
+        items.addAll(list)
+        notifyDataSetChanged()
+    }
 }
 
-class FeedItemHolder(v: View) : RecyclerView.ViewHolder(v) {
-  
-  var binding: FeedItemBinding? = null
-    private set
-  
-  init {
-    binding = DataBindingUtil.bind(v)
-  }
-  
+class RecommendVideoItemHolder(v: View) : RecyclerView.ViewHolder(v) {
+
+    var binding: FeedItemBinding? = null
+        private set
+
+    init {
+        binding = DataBindingUtil.bind(v)
+    }
 }
