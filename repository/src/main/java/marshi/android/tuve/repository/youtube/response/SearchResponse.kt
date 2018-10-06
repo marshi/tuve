@@ -1,5 +1,6 @@
 package marshi.android.tuve.repository.youtube.response
 
+import marshi.android.tuve.domain.RecommendVideoSnippetEntity
 import marshi.android.tuve.domain.VideoSnippetEntity
 import marshi.android.tuve.domain.VideoThumbnail
 import java.net.URL
@@ -15,6 +16,22 @@ class SearchResponse(
     return items.map {
       it.snippet.let { snippet ->
         VideoSnippetEntity(
+          snippet.publishedAt,
+          snippet.channelId,
+          snippet.title,
+          snippet.description,
+          snippet.thumbnails.high.convert(),
+          snippet.channelTitle,
+          snippet.liveBroadcastContent
+        )
+      }
+    }
+  }
+
+  fun convertToRecommend(): List<RecommendVideoSnippetEntity> {
+    return items.map {
+      it.snippet.let { snippet ->
+        RecommendVideoSnippetEntity(
           snippet.publishedAt,
           snippet.channelId,
           snippet.title,

@@ -9,11 +9,11 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import marshi.android.tuve.R
 import marshi.android.tuve.databinding.RecommendVideoItemBinding
-import marshi.android.tuve.domain.VideoSnippetEntity
+import marshi.android.tuve.domain.RecommendVideoSnippetEntity
 
 class RecommendVideoListAdapter : RecyclerView.Adapter<RecommendVideoItemHolder>() {
 
-    private val items = mutableListOf<VideoSnippetEntity>()
+    private val items = mutableListOf<RecommendVideoSnippetEntity>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecommendVideoItemHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.recommend_video_item, parent, false)
@@ -36,7 +36,7 @@ class RecommendVideoListAdapter : RecyclerView.Adapter<RecommendVideoItemHolder>
         }
     }
 
-    fun addAll(list: List<VideoSnippetEntity>) {
+    fun addAll(list: List<RecommendVideoSnippetEntity>) {
         items.addAll(list)
         notifyDataSetChanged()
     }
