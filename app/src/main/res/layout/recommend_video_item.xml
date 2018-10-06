@@ -6,6 +6,7 @@
     >
 
     <data>
+
         <variable
             name="vm"
             type="marshi.android.tuve.ui.recommendVideoList.RecommendVideoViewModel"/>
