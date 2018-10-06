@@ -18,7 +18,7 @@ import javax.inject.Inject
 class RecommendVideoListFragment : Fragment() {
 
     lateinit var binding: FragmentRecommendVideoListBinding
-    @Inject lateinit var vm: RecommendVideoListViewModel
+    @Inject internal lateinit var vm: RecommendVideoListViewModel
 
     override fun onAttach(context: Context?) {
         AndroidSupportInjection.inject(this)

@@ -8,7 +8,7 @@ import marshi.android.tuve.domain.RecommendVideoSnippetEntity
 import marshi.android.tuve.repository.youtube.YoutubeRepository
 import javax.inject.Inject
 
-class RecommendVideoListViewModel @Inject constructor(
+internal class RecommendVideoListViewModel @Inject constructor(
     private val repository: YoutubeRepository
 ) {
 
