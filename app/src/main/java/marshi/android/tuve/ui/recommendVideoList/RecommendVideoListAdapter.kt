@@ -3,20 +3,19 @@ package marshi.android.tuve.ui.recommendVideoList
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleObserver
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import marshi.android.tuve.R
 import marshi.android.tuve.databinding.RecommendVideoItemBinding
 import marshi.android.tuve.domain.RecommendVideoSnippetEntity
-import marshi.android.tuve.ui.videoDetail.VideoDetailFragment
+import marshi.android.tuve.ui.videoDetail.VideoDetailNavigator
 import javax.inject.Inject
 import javax.inject.Provider
 
 class RecommendVideoListAdapter @Inject constructor(
-    private val fragment: Fragment
+    private val fragment: Fragment,
+    private val navigator: VideoDetailNavigator
 ) : RecyclerView.Adapter<RecommendVideoItemHolder>(),
     LifecycleObserver {
 
@@ -36,11 +35,7 @@ class RecommendVideoListAdapter @Inject constructor(
         val vm = holder.binding.vm!!
         vm.update(entity)
         holder.binding.root.setOnClickListener {
-            val bundle = bundleOf(
-                VideoDetailFragment.VIDEO_ID to entity.videoId.id
-            )
-            Navigation.findNavController(holder.binding.root)
-                .navigate(R.id.video_detail_fragment, bundle)
+            navigator.navigate(holder.binding.root, entity.videoId)
         }
     }
 
