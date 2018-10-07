@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener
 import dagger.android.support.AndroidSupportInjection
 import marshi.android.tuve.databinding.FragmentVideoDetailBinding
+import marshi.android.tuve.ui.channelSnippetList.ChannelVideoSnippetListAdapter
 import marshi.android.tuve.uiUtil.MarginDecoration
 import javax.inject.Inject
 
@@ -23,7 +24,7 @@ class VideoDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentVideoDetailBinding
     @Inject lateinit var vm: VideoDetailBottomListViewModel
-    @Inject lateinit var adapter: VideoDetailBottomListAdapter
+    @Inject lateinit var adapter: ChannelVideoSnippetListAdapter
 
     override fun onAttach(context: Context?) {
         AndroidSupportInjection.inject(this)
