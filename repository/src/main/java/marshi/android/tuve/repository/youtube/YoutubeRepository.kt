@@ -27,7 +27,7 @@ class YoutubeRepository @Inject constructor(
 
   fun recommend(channelId: String): Single<List<RecommendVideoSnippetEntity>> {
     return api.search(
-      part = "snippet",
+      part = "snippet,id",
       channelId = "UCD-miitqNY3nyukJ4Fnf4_A",
       order = "date",
       key = key.value,

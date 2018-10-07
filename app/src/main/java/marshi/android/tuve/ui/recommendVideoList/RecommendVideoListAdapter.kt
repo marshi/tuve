@@ -3,11 +3,9 @@ package marshi.android.tuve.ui.recommendVideoList
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import marshi.android.tuve.R
@@ -37,18 +35,12 @@ class RecommendVideoListAdapter @Inject constructor(
         val entity = items[position]
         val vm = holder.binding.vm!!
         vm.update(entity)
-        vm.videoDetailEntity.observe(fragment, Observer {  detail ->
+        holder.binding.root.setOnClickListener {
             val bundle = bundleOf(
-                "embedHtml" to detail.embedHtml,
-                "title" to entity.title,
                 VideoDetailFragment.VIDEO_ID to entity.videoId.id
             )
             Navigation.findNavController(holder.binding.root)
                 .navigate(R.id.video_detail_fragment, bundle)
-        })
-
-        holder.binding.root.setOnClickListener {
-            vm.detail()
         }
     }
 

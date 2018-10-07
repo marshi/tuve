@@ -3,7 +3,7 @@ package marshi.android.tuve.repository.youtube.response
 import marshi.android.tuve.domain.VideoDetailEntity
 import marshi.android.tuve.domain.VideoId
 
-class YoutubeVideoResponse (
+class YoutubeVideoResponse(
     val etag: String,
     val nextPageToken: String?,
     val regionCode: String?,
