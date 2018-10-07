@@ -23,6 +23,7 @@ class VideoDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentVideoDetailBinding
     @Inject lateinit var vm: VideoDetailBottomListViewModel
+    @Inject lateinit var adapter: VideoDetailBottomListAdapter
 
     override fun onAttach(context: Context?) {
         AndroidSupportInjection.inject(this)
@@ -45,7 +46,6 @@ class VideoDetailFragment : Fragment() {
             })
         }, false)
 
-        val adapter = VideoDetailBottomListAdapter()
         binding.recyclerView.also {
             it.adapter = adapter
             it.layoutManager = LinearLayoutManager(context)
