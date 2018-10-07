@@ -2,6 +2,7 @@ package marshi.android.tuve.repository.youtube
 
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
+import marshi.android.tuve.domain.ChannelId
 import marshi.android.tuve.domain.RecommendVideoSnippetEntity
 import marshi.android.tuve.domain.VideoDetailEntity
 import marshi.android.tuve.domain.VideoId
@@ -14,7 +15,7 @@ class YoutubeRepository @Inject constructor(
   private val api: YoutubeApiClient,
   private val key: YoutubeApiKey
 ) {
-  fun search(channelId: String): Single<List<VideoSnippetEntity>> {
+  fun search(channelId: ChannelId): Single<List<VideoSnippetEntity>> {
     return api.search(
       part = "snippet,id",
       channelId = "UCD-miitqNY3nyukJ4Fnf4_A",
@@ -25,7 +26,7 @@ class YoutubeRepository @Inject constructor(
       .map { it.convert() }
   }
 
-  fun recommend(channelId: String): Single<List<RecommendVideoSnippetEntity>> {
+  fun recommend(channelId: ChannelId): Single<List<RecommendVideoSnippetEntity>> {
     return api.search(
       part = "snippet,id",
       channelId = "UCD-miitqNY3nyukJ4Fnf4_A",

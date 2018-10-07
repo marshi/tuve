@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener
 import dagger.android.support.AndroidSupportInjection
 import marshi.android.tuve.databinding.FragmentVideoDetailBinding
+import marshi.android.tuve.domain.ChannelId
 import marshi.android.tuve.ui.channelSnippetList.ChannelVideoSnippetListAdapter
 import marshi.android.tuve.uiUtil.MarginDecoration
 import javax.inject.Inject
@@ -55,7 +56,7 @@ class VideoDetailFragment : Fragment() {
         vm.videoSnippetEntities.observe(this, Observer{ entities ->
             adapter.addAll(entities)
         })
-        vm.channel(channelId)
+        vm.channel(ChannelId(channelId))
         return binding.root
     }
 }
