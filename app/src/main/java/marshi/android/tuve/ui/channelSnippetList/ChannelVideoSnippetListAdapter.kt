@@ -7,11 +7,13 @@ import androidx.recyclerview.widget.RecyclerView
 import marshi.android.tuve.R
 import marshi.android.tuve.databinding.VideoDetailBottomListItemBinding
 import marshi.android.tuve.domain.VideoSnippetEntity
+import marshi.android.tuve.ui.videoDetail.VideoDetailNavigator
 import javax.inject.Inject
 import javax.inject.Provider
 
 class ChannelVideoSnippetListAdapter @Inject constructor(
-    private val provider: Provider<ChannelVideoSnippetItemViewModel>
+    private val provider: Provider<ChannelVideoSnippetItemViewModel>,
+    private val navigator: VideoDetailNavigator
 ) : RecyclerView.Adapter<ViewHolder>() {
 
     private val list = mutableListOf<VideoSnippetEntity>()
@@ -28,6 +30,9 @@ class ChannelVideoSnippetListAdapter @Inject constructor(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val entity = list[position]
         holder.viewModel.update(entity)
+        holder.binding.root.setOnClickListener {
+            navigator.navigate(holder.binding.root, entity.videoId, entity.channelId)
+        }
     }
 
     fun addAll(entities: List<VideoSnippetEntity>) {

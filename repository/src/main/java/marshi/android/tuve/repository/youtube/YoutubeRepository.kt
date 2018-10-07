@@ -16,7 +16,7 @@ class YoutubeRepository @Inject constructor(
 ) {
   fun search(channelId: String): Single<List<VideoSnippetEntity>> {
     return api.search(
-      part = "snippet",
+      part = "snippet,id",
       channelId = "UCD-miitqNY3nyukJ4Fnf4_A",
       order = "date",
       key = key.value,

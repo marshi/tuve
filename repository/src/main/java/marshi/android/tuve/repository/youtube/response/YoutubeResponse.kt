@@ -18,6 +18,7 @@ class YoutubeResponse(
             .mapNotNull {
                 it.snippet?.let { snippet ->
                     VideoSnippetEntity(
+                        VideoId(it.id.videoId),
                         snippet.publishedAt.toDate(),
                         snippet.channelId,
                         snippet.title,

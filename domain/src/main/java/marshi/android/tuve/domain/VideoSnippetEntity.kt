@@ -4,6 +4,7 @@ import marshi.android.tuve.ext.humanReadableRelativeText
 import java.util.Date
 
 class VideoSnippetEntity(
+    val videoId: VideoId,
     val publishedAt: Date,
     val channelId: String,
     val title: String,
