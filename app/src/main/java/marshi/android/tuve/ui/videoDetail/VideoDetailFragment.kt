@@ -12,6 +12,10 @@ import marshi.android.tuve.databinding.FragmentVideoDetailBinding
 
 class VideoDetailFragment : Fragment() {
 
+    companion object {
+        const val VIDEO_ID = "videoId"
+    }
+
     private lateinit var binding: FragmentVideoDetailBinding
 
     override fun onAttach(context: Context?) {
@@ -23,7 +27,7 @@ class VideoDetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val videoId = arguments!!.getString("videoId")
+        val videoId = arguments!!.getString(VIDEO_ID)
         binding = FragmentVideoDetailBinding.inflate(inflater, container, false)
         val youtubePlayer = binding.youtubePlayer
         youtubePlayer.initialize({

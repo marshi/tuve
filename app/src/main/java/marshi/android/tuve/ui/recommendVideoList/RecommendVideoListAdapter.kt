@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import marshi.android.tuve.R
 import marshi.android.tuve.databinding.RecommendVideoItemBinding
 import marshi.android.tuve.domain.RecommendVideoSnippetEntity
+import marshi.android.tuve.ui.videoDetail.VideoDetailFragment
 import javax.inject.Inject
 import javax.inject.Provider
 
@@ -40,7 +41,7 @@ class RecommendVideoListAdapter @Inject constructor(
             val bundle = bundleOf(
                 "embedHtml" to detail.embedHtml,
                 "title" to entity.title,
-                "videoId" to entity.videoId.id
+                VideoDetailFragment.VIDEO_ID to entity.videoId.id
             )
             Navigation.findNavController(holder.binding.root)
                 .navigate(R.id.video_detail_fragment, bundle)
