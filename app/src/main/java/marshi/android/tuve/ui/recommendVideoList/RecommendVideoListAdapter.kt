@@ -34,7 +34,7 @@ class RecommendVideoListAdapter @Inject constructor(
         val vm = holder.binding.vm!!
         vm.update(entity)
         holder.binding.root.setOnClickListener {
-            navigator.navigate(holder.binding.root, entity.videoId)
+            navigator.navigate(holder.binding.root, entity.videoId, entity.channelId)
         }
     }
 

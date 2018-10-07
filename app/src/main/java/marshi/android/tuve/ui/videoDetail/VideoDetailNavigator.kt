@@ -11,9 +11,10 @@ import javax.inject.Singleton
 @Singleton
 class VideoDetailNavigator @Inject constructor() {
 
-    fun navigate(view: View, videoId: VideoId) {
+    fun navigate(view: View, videoId: VideoId, channelId: String) {
         val bundle = bundleOf(
-            VideoDetailFragment.VIDEO_ID to videoId.id
+            VideoDetailFragment.VIDEO_ID to videoId.id,
+            VideoDetailFragment.CHANNEL_ID to channelId
         )
         Navigation.findNavController(view)
             .navigate(R.id.video_detail_fragment, bundle)
