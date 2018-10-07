@@ -21,7 +21,6 @@ class RecommendVideoListAdapter @Inject constructor(
 
     private val items = mutableListOf<RecommendVideoSnippetEntity>()
     @Inject internal lateinit var recommendVideoViewModelProvider: Provider<RecommendVideoViewModel>
-    internal lateinit var clickListener: ItemOnClickListener
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecommendVideoItemHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.recommend_video_item, parent, false)
@@ -35,7 +34,7 @@ class RecommendVideoListAdapter @Inject constructor(
         val vm = holder.binding.vm!!
         vm.update(entity)
         holder.binding.root.setOnClickListener {
-            navigator.navigate(holder.binding.root, entity.videoId)
+            navigator.navigate(holder.binding.root, entity.videoId, entity.channelId)
         }
     }
 
@@ -56,8 +55,4 @@ class RecommendVideoItemHolder(
     init {
         binding.vm = provider.get()
     }
-}
-
-interface ItemOnClickListener {
-    fun onClick(recommendVideoViewModel: RecommendVideoViewModel)
 }

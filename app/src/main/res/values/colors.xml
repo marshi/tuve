@@ -7,4 +7,5 @@
     <color name="screen_background">#F0F0F0</color>
     <color name="title_text">#232F34</color>
     <color name="body_text">#232F34</color>
+    <color name="slight_text">#a9a9a9</color>
 </resources>
