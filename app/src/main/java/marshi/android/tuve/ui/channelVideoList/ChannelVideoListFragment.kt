@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.android.support.AndroidSupportInjection
 import marshi.android.tuve.databinding.FragmentFeedMediaListBinding
+import marshi.android.tuve.domain.ChannelId
 import marshi.android.tuve.uiUtil.MarginDecoration
 import javax.inject.Inject
 
@@ -56,7 +57,7 @@ class ChannelVideoListFragment : Fragment() {
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 query ?: return false
-                vm.update(query)
+                vm.update(ChannelId(query))
                 return false
             }
 

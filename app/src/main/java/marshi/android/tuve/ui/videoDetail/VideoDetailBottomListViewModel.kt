@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import androidx.lifecycle.MutableLiveData
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxkotlin.subscribeBy
+import marshi.android.tuve.domain.ChannelId
 import marshi.android.tuve.domain.VideoSnippetEntity
 import marshi.android.tuve.repository.youtube.YoutubeRepository
 import javax.inject.Inject
@@ -15,7 +16,7 @@ class VideoDetailBottomListViewModel @Inject constructor(
     val videoSnippetEntities = MutableLiveData<List<VideoSnippetEntity>>()
 
     @SuppressLint("CheckResult")
-    fun channel(channelId: String) {
+    fun channel(channelId: ChannelId) {
         repository.search(channelId)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeBy(

@@ -1,10 +1,10 @@
-package marshi.android.tuve.ui.videoDetail
+package marshi.android.tuve.ui.channelSnippetList
 
 import androidx.lifecycle.MutableLiveData
 import marshi.android.tuve.domain.VideoSnippetEntity
 import javax.inject.Inject
 
-class ChannelVideoItemViewModel @Inject constructor(){
+class ChannelVideoSnippetItemViewModel @Inject constructor(){
 
     val videoSnippetEntity = MutableLiveData<VideoSnippetEntity>()
 

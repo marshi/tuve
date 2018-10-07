@@ -1,5 +1,6 @@
 package marshi.android.tuve.repository.youtube.response
 
+import marshi.android.tuve.domain.ChannelId
 import marshi.android.tuve.domain.RecommendVideoSnippetEntity
 import marshi.android.tuve.domain.VideoId
 import marshi.android.tuve.domain.VideoSnippetEntity
@@ -18,8 +19,9 @@ class YoutubeResponse(
             .mapNotNull {
                 it.snippet?.let { snippet ->
                     VideoSnippetEntity(
+                        VideoId(it.id.videoId),
                         snippet.publishedAt.toDate(),
-                        snippet.channelId,
+                        ChannelId(snippet.channelId),
                         snippet.title,
                         snippet.description,
                         snippet.thumbnails.high.convert(),
@@ -36,7 +38,7 @@ class YoutubeResponse(
                 RecommendVideoSnippetEntity(
                     VideoId(it.id.videoId),
                     snippet.publishedAt.toDate(),
-                    snippet.channelId,
+                    ChannelId(snippet.channelId),
                     snippet.title,
                     snippet.description,
                     snippet.thumbnails.high.convert(),

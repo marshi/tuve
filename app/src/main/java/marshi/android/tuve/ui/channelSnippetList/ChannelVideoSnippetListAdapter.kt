@@ -1,4 +1,4 @@
-package marshi.android.tuve.ui.videoDetail
+package marshi.android.tuve.ui.channelSnippetList
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,11 +7,13 @@ import androidx.recyclerview.widget.RecyclerView
 import marshi.android.tuve.R
 import marshi.android.tuve.databinding.VideoDetailBottomListItemBinding
 import marshi.android.tuve.domain.VideoSnippetEntity
+import marshi.android.tuve.ui.videoDetail.VideoDetailNavigator
 import javax.inject.Inject
 import javax.inject.Provider
 
-class VideoDetailBottomListAdapter @Inject constructor(
-    private val provider: Provider<ChannelVideoItemViewModel>
+class ChannelVideoSnippetListAdapter @Inject constructor(
+    private val provider: Provider<ChannelVideoSnippetItemViewModel>,
+    private val navigator: VideoDetailNavigator
 ) : RecyclerView.Adapter<ViewHolder>() {
 
     private val list = mutableListOf<VideoSnippetEntity>()
@@ -28,6 +30,9 @@ class VideoDetailBottomListAdapter @Inject constructor(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val entity = list[position]
         holder.viewModel.update(entity)
+        holder.binding.root.setOnClickListener {
+            navigator.navigate(holder.binding.root, entity.videoId, entity.channelId)
+        }
     }
 
     fun addAll(entities: List<VideoSnippetEntity>) {
@@ -37,7 +42,7 @@ class VideoDetailBottomListAdapter @Inject constructor(
     }
 }
 
-class ViewHolder(view: View, provider: Provider<ChannelVideoItemViewModel>) : RecyclerView.ViewHolder(view) {
+class ViewHolder(view: View, provider: Provider<ChannelVideoSnippetItemViewModel>) : RecyclerView.ViewHolder(view) {
     val binding = VideoDetailBottomListItemBinding.bind(view)!!
     val viewModel = provider.get()!!
     init {

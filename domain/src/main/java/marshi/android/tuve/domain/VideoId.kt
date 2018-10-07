@@ -1,5 +1,5 @@
 package marshi.android.tuve.domain
 
-class VideoId(
+data class VideoId(
   val id: String
 )
