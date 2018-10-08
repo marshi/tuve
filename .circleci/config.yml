@@ -8,8 +8,8 @@ jobs:
       JVM_OPTS: -Xmx3200m
     steps:
       - checkout:
-        post:
-          - echo > ${HOME}/local.properties
+          post:
+            - echo > ${HOME}/local.properties
       - run: echo $JKS | base64 --decode >> ${HOME}/keystore.jks
       - run: echo 'export RELEASE_STORE_FILE=${HOME}/keystore.jks' >> $BASH_ENV
       - restore_cache:
