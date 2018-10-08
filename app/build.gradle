@@ -54,6 +54,9 @@ android {
             signingConfig signingConfigs.releasesign
         }
     }
+    lintOptions {
+        abortOnError false
+    }
     dataBinding {
         enabled = true
     }
