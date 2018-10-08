@@ -9,9 +9,9 @@ jobs:
     steps:
       - checkout:
           post:
-            -  touch local.properties
-      - run: echo $JKS | base64 --decode >> ${HOME}/repo/keystore.jks
-      - run: echo 'export RELEASE_STORE_FILE=${HOME}/repo/keystore.jks' >> $BASH_ENV
+            - touch local.properties
+      - run: echo $JKS | base64 --decode >> ${HOME}/keystore.jks
+      - run: echo 'export RELEASE_STORE_FILE=${HOME}/keystore.jks' >> $BASH_ENV
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
 #      - run:
