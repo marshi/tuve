@@ -10,6 +10,7 @@ jobs:
       - checkout:
           post:
             - echo > local.properties
+            - ls
       - run: echo $JKS | base64 --decode >> ${HOME}/keystore.jks
       - run: echo 'export RELEASE_STORE_FILE=${HOME}/keystore.jks' >> $BASH_ENV
       - restore_cache:
