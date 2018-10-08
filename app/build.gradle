@@ -21,14 +21,14 @@ ext {
 
 android {
     Properties properties = new Properties()
-    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+    properties.load(rootProject.file('local.properties').newDataInputStream())
 
     signingConfigs {
         releasesign {
-            storeFile file(properties.getProperty("RELEASE_STORE_FILE"))
-            storePassword properties.getProperty("RELEASE_STORE_PASSWORD")
-            keyAlias properties.getProperty('RELEASE_KEY_ALIAS')
-            keyPassword properties.getProperty('RELEASE_KEY_PASSWORD')
+            storeFile file(properties.getProperty("RELEASE_STORE_FILE", System.getenv("RELEASE_STORE_FILE")))
+            storePassword properties.getProperty("RELEASE_STORE_PASSWORD", System.getenv("RELEASE_STORE_PASSWORD"))
+            keyAlias properties.getProperty('RELEASE_KEY_ALIAS', System.getenv("RELEASE_KEY_ALIAS"))
+            keyPassword properties.getProperty('RELEASE_KEY_PASSWORD', System.getenv("RELEASE_KEY_PASSWORD"))
         }
     }
     compileSdkVersion 28
@@ -43,7 +43,7 @@ android {
         versionCode 1
         versionName "1.0"
 //        testInstrumentationRunner "android."
-        buildConfigField("String", "youtubeApiKey", "\"${properties.getProperty('YOUTUBE_API_KEY')}\"")
+        buildConfigField("String", "youtubeApiKey", "\"${properties.getProperty('YOUTUBE_API_KEY', System.getenv("YOUTUBE_API_KEY"))}\"")
     }
     buildTypes {
         release {
@@ -53,6 +53,9 @@ android {
             jniDebuggable false
             signingConfig signingConfigs.releasesign
         }
+    }
+    lintOptions {
+        abortOnError false
     }
     dataBinding {
         enabled = true
