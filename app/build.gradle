@@ -55,6 +55,13 @@ android {
             signingConfig signingConfigs.releasesign
         }
     }
+    sourceSets {
+        main {
+            file('src/main/res-atomic')
+                    .listFiles()
+                    .each { res.srcDirs += it.path }
+        }
+    }
     lintOptions {
         abortOnError false
     }
