@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener
+import com.xwray.groupie.GroupAdapter
 import dagger.android.support.AndroidSupportInjection
 import marshi.android.tuve.databinding.FragmentVideoDetailBinding
 import marshi.android.tuve.domain.ChannelId
@@ -25,7 +26,7 @@ class VideoDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentVideoDetailBinding
     @Inject lateinit var vm: VideoDetailBottomListViewModel
-    @Inject lateinit var adapter: ChannelVideoSnippetListAdapter
+    @Inject lateinit var adapter: VideoDetailAdapter
 
     override fun onAttach(context: Context?) {
         AndroidSupportInjection.inject(this)
@@ -54,7 +55,7 @@ class VideoDetailFragment : Fragment() {
             it.addItemDecoration(MarginDecoration.newInstance(context!!, 5, 5))
         }
         vm.videoSnippetEntities.observe(this, Observer{ entities ->
-            adapter.addAll(entities)
+            adapter.addSnippet(entities)
         })
         vm.channel(ChannelId(channelId))
         return binding.root

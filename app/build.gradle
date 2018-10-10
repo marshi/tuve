@@ -17,6 +17,7 @@ ext {
     retrofit_version = "2.4.0"
     design_version = "1.0.0"
     glide_version = "4.8.0"
+    groupie_version = "2.1.0"
 }
 
 android {
@@ -155,6 +156,11 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:${glide_version}") {
         exclude group: "com.android.support"
     }
+
+    //groupie
+    implementation "com.xwray:groupie:${groupie_version}"
+    implementation "com.xwray:groupie-kotlin-android-extensions:${groupie_version}"
+    implementation "com.xwray:groupie-databinding:${groupie_version}"
 
     kapt "com.github.bumptech.glide:compiler:${glide_version}"
 }
