@@ -18,6 +18,7 @@ ext {
     design_version = "1.0.0"
     glide_version = "4.8.0"
     groupie_version = "2.1.0"
+    androidx_core_version = "2.0.0"
 }
 
 android {
@@ -136,7 +137,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-reactivestreams:2.0.0'
 
     // optional - Test helpers for LiveData
-    testImplementation 'androidx.arch.core:core-testing:2.0.0'
+    testImplementation "androidx.arch.core:core-testing:${androidx_core_version}"
 
     // https://mvnrepository.com/artifact/com.rometools/rome
     implementation 'com.rometools:rome:1.11.0'
