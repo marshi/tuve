@@ -1,4 +1,4 @@
-package marshi.android.tuve.repository.youtube
+package marshi.android.tuve.repository.api.youtube
 
 import javax.inject.Inject
 

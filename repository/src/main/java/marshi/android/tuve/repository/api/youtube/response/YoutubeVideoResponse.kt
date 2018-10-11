@@ -1,14 +1,14 @@
-package marshi.android.tuve.repository.youtube.response
+package marshi.android.tuve.repository.api.youtube.response
 
 import marshi.android.tuve.domain.VideoDetailEntity
 import marshi.android.tuve.domain.VideoId
 
 class YoutubeVideoResponse(
-    val etag: String,
-    val nextPageToken: String?,
-    val regionCode: String?,
-    val pageInfo: PageInfo,
-    val items: List<VideoItem>
+        val etag: String,
+        val nextPageToken: String?,
+        val regionCode: String?,
+        val pageInfo: PageInfo,
+        val items: List<VideoItem>
 ) {
     fun convertToVideoDetail(): VideoDetailEntity? {
         val item = items.firstOrNull() ?: return null
@@ -20,9 +20,9 @@ class YoutubeVideoResponse(
 }
 
 class VideoItem(
-    val kind: String,
-    val etag: String,
-    val id: String,
-    val snippet: SnippetResponse?,
-    val player: PlayerResponse?
+        val kind: String,
+        val etag: String,
+        val id: String,
+        val snippet: SnippetResponse?,
+        val player: PlayerResponse?
 )

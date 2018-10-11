@@ -5,8 +5,8 @@ import dagger.Module
 import dagger.Provides
 import marshi.android.tuve.BuildConfig
 import marshi.android.tuve.di.annotation.IdentityGson
-import marshi.android.tuve.repository.youtube.YoutubeApiClient
-import marshi.android.tuve.repository.youtube.YoutubeApiKey
+import marshi.android.tuve.repository.api.youtube.YoutubeApiClient
+import marshi.android.tuve.repository.api.youtube.YoutubeApiKey
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton

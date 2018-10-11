@@ -1,4 +1,4 @@
-package marshi.android.tuve.repository.youtube
+package marshi.android.tuve.repository.api.youtube
 
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
@@ -12,8 +12,8 @@ import javax.inject.Singleton
 
 @Singleton
 class YoutubeRepository @Inject constructor(
-  private val api: YoutubeApiClient,
-  private val key: YoutubeApiKey
+        private val api: YoutubeApiClient,
+        private val key: YoutubeApiKey
 ) {
   fun search(channelId: ChannelId): Single<List<VideoSnippetEntity>> {
     return api.search(

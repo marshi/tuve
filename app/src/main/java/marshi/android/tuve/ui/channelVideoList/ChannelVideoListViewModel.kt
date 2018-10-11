@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import marshi.android.tuve.domain.ChannelId
 import marshi.android.tuve.domain.VideoSnippetEntity
-import marshi.android.tuve.repository.youtube.YoutubeRepository
+import marshi.android.tuve.repository.api.youtube.YoutubeRepository
 import javax.inject.Inject
 
 internal class ChannelVideoListViewModel @Inject constructor(

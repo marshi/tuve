@@ -1,11 +1,11 @@
-package marshi.android.tuve.repository.feedly.response
+package marshi.android.tuve.repository.api.feedly.response
 
 import marshi.android.tuve.domain.FeedMediaEntity
 import java.net.URI
 
 class SearchResponse(
-  val results: List<Result>,
-  val scheme: String
+        val results: List<Result>,
+        val scheme: String
 )
 
 class Result(

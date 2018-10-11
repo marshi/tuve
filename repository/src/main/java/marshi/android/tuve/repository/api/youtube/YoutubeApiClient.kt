@@ -1,8 +1,8 @@
-package marshi.android.tuve.repository.youtube
+package marshi.android.tuve.repository.api.youtube
 
 import io.reactivex.Single
-import marshi.android.tuve.repository.youtube.response.YoutubeResponse
-import marshi.android.tuve.repository.youtube.response.YoutubeVideoResponse
+import marshi.android.tuve.repository.api.youtube.response.YoutubeResponse
+import marshi.android.tuve.repository.api.youtube.response.YoutubeVideoResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

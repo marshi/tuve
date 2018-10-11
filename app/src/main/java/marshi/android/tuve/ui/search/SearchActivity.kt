@@ -8,7 +8,7 @@ import dagger.android.AndroidInjection
 import io.reactivex.android.schedulers.AndroidSchedulers
 import marshi.android.tuve.R
 import marshi.android.tuve.databinding.ActivitySearchBinding
-import marshi.android.tuve.repository.feedly.FeedlyRepository
+import marshi.android.tuve.repository.api.feedly.FeedlyRepository
 import javax.inject.Inject
 
 

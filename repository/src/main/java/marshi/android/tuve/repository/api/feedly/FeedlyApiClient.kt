@@ -1,7 +1,7 @@
-package marshi.android.tuve.repository.feedly
+package marshi.android.tuve.repository.api.feedly
 
 import io.reactivex.Single
-import marshi.android.tuve.repository.feedly.response.SearchResponse
+import marshi.android.tuve.repository.api.feedly.response.SearchResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

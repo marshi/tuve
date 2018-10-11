@@ -1,4 +1,4 @@
-package marshi.android.tuve.repository.feedly
+package marshi.android.tuve.repository.api.feedly
 
 import javax.inject.Qualifier
 

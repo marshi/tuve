@@ -1,4 +1,4 @@
-package marshi.android.tuve.repository.youtube.parameter
+package marshi.android.tuve.repository.api.youtube.parameter
 
 enum class Part {
     Snippet,

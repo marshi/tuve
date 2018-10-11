@@ -1,12 +1,12 @@
-package marshi.android.tuve.repository.youtube.response
+package marshi.android.tuve.repository.api.youtube.response
 
 import marshi.android.tuve.domain.VideoThumbnail
 import java.net.URL
 
 class Thumbnails(
-    val default: Thumbnail,
-    val medium: Thumbnail,
-    val high: Thumbnail
+        val default: Thumbnail,
+        val medium: Thumbnail,
+        val high: Thumbnail
 )
 
 class Thumbnail(

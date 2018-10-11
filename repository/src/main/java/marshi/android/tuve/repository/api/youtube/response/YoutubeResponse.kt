@@ -1,4 +1,4 @@
-package marshi.android.tuve.repository.youtube.response
+package marshi.android.tuve.repository.api.youtube.response
 
 import marshi.android.tuve.domain.ChannelId
 import marshi.android.tuve.domain.RecommendVideoSnippetEntity
@@ -7,11 +7,11 @@ import marshi.android.tuve.domain.VideoSnippetEntity
 import marshi.android.tuve.ext.toDate
 
 class YoutubeResponse(
-    val etag: String,
-    val nextPageToken: String?,
-    val regionCode: String?,
-    val pageInfo: PageInfo,
-    val items: List<ChannelItem>
+        val etag: String,
+        val nextPageToken: String?,
+        val regionCode: String?,
+        val pageInfo: PageInfo,
+        val items: List<ChannelItem>
 ) {
 
     fun convert(): List<VideoSnippetEntity> {
@@ -51,11 +51,11 @@ class YoutubeResponse(
 }
 
 class ChannelItem(
-    val kind: String,
-    val etag: String,
-    val id: Id,
-    val snippet: SnippetResponse?,
-    val player: PlayerResponse?
+        val kind: String,
+        val etag: String,
+        val id: Id,
+        val snippet: SnippetResponse?,
+        val player: PlayerResponse?
 )
 
 class Id(

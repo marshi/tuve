@@ -1,4 +1,4 @@
-package marshi.android.tuve.repository
+package marshi.android.tuve.repository.api
 
 import okhttp3.Interceptor
 import okhttp3.Response
