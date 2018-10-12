@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-  <style name="FollowButton" parent="AccentButton">
+  <style name="FollowButton_NotFollowed" parent="AccentButton">
     <item name="android:textSize">12sp</item>
     <item name="android:text">@string/follow</item>
+  </style>
+
+  <style name="FollowButton_AlreadyFollowed" parent="AccentButton">
+    <item name="android:textSize">12sp</item>
+    <item name="android:text">@string/following</item>
   </style>
 </resources>

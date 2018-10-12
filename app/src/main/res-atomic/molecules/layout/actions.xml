@@ -7,6 +7,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <include layout="@layout/follow_button"/>
+        <include
+            android:id="@+id/follow_button_component"
+            layout="@layout/follow_button"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

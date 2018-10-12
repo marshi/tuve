@@ -11,8 +11,7 @@ import marshi.android.tuve.repository.database.follow.FollowRepository
 import javax.inject.Inject
 
 class VideoDetailBottomListViewModel @Inject constructor(
-  private val youtubeRepository: YoutubeRepository,
-  private val followRepository: FollowRepository
+  private val youtubeRepository: YoutubeRepository
 ) {
 
   val videoSnippetEntities = MutableLiveData<List<VideoSnippetEntity>>()
