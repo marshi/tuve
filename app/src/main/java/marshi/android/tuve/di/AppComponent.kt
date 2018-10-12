@@ -26,7 +26,6 @@ interface AppComponent : AndroidInjector<App> {
     fun build(): AppComponent
   }
   
-  fun build(): AppComponent
 
   override fun inject(instance: App)
   
