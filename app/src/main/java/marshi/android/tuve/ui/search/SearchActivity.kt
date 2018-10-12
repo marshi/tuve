@@ -9,6 +9,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import marshi.android.tuve.R
 import marshi.android.tuve.databinding.ActivitySearchBinding
 import marshi.android.tuve.repository.api.feedly.FeedlyRepository
+import marshi.android.tuve.repository.api.feedly.FeedlyRepository_Factory
 import javax.inject.Inject
 
 

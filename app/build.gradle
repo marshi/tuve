@@ -13,7 +13,7 @@ ext {
     appcompat_version = "1.0.0"
     constraintlayout_version = "1.1.3"
     lifecycle_version = "1.1.1"
-    kotlin_version = '1.2.60'
+    kotlin_version = '1.2.71'
     retrofit_version = "2.4.0"
     design_version = "1.0.0"
     glide_version = "4.8.0"
@@ -34,6 +34,7 @@ android {
         }
     }
     compileSdkVersion 28
+    buildToolsVersion "28.0.2"
     compileOptions {
         sourceCompatibility 1.8
         targetCompatibility 1.8
@@ -43,7 +44,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
-        versionName "1.0"
+        versionName "2.0"
 //        testInstrumentationRunner "android."
         buildConfigField("String", "youtubeApiKey", "\"${properties.getProperty('YOUTUBE_API_KEY', System.getenv("YOUTUBE_API_KEY"))}\"")
     }
@@ -54,6 +55,10 @@ android {
             debuggable false
             jniDebuggable false
             signingConfig signingConfigs.releasesign
+            matchingFallbacks = ['release']
+        }
+        debug {
+            matchingFallbacks = ['debug']
         }
     }
     sourceSets {
@@ -81,8 +86,8 @@ kapt {
 }
 
 dependencies {
+    implementation project(path: ":repository")
     implementation project(':domain')
-    implementation project(':repository')
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:28.0.0'
