@@ -9,17 +9,15 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import marshi.android.tuve.R
 import marshi.android.tuve.databinding.ActivitySearchBinding
 import marshi.android.tuve.repository.api.feedly.FeedlyRepository
-import marshi.android.tuve.repository.api.feedly.FeedlyRepository_Factory
 import javax.inject.Inject
 
-
 class SearchActivity : AppCompatActivity() {
-  
+
   private lateinit var binding: ActivitySearchBinding
-  
+
   @Inject
   lateinit var repository: FeedlyRepository
-  
+
   override fun onCreate(savedInstanceState: Bundle?) {
     AndroidInjection.inject(this)
     super.onCreate(savedInstanceState)
@@ -32,21 +30,21 @@ class SearchActivity : AppCompatActivity() {
       override fun onQueryTextSubmit(query: String): Boolean {
         repository.search(query)
           .observeOn(AndroidSchedulers.mainThread())
-          .subscribe ({ it ->
+          .subscribe({ it ->
             println(it)
           }, {
             println(it)
           })
         return false
       }
-      
+
       override fun onQueryTextChange(p0: String?): Boolean {
         return false
       }
     })
-    
+
     binding.button.setOnClickListener {
-    
+
     }
   }
 }
