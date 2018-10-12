@@ -176,4 +176,6 @@ dependencies {
     implementation "com.xwray:groupie-databinding:${groupie_version}"
 
     kapt "com.github.bumptech.glide:compiler:${glide_version}"
+
+    implementation "androidx.room:room-runtime:$androidx_core_version"
 }

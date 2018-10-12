@@ -1,4 +1,4 @@
-package marshi.android.tuve.repository.database.entity
+package marshi.android.tuve.repository.database.follow
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
