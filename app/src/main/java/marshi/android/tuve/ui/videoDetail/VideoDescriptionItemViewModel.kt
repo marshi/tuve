@@ -1,8 +1,12 @@
 package marshi.android.tuve.ui.videoDetail
 
+import android.annotation.SuppressLint
 import androidx.lifecycle.MutableLiveData
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.rxkotlin.subscribeBy
 import marshi.android.tuve.di.FragmentScope
 import marshi.android.tuve.domain.ChannelId
+import marshi.android.tuve.domain.FollowEntity
 import marshi.android.tuve.domain.FollowStatus
 import marshi.android.tuve.repository.database.follow.FollowRepository
 import javax.inject.Inject
@@ -14,15 +18,28 @@ class VideoDescriptionItemViewModel @Inject constructor(
 
   val followStatus = MutableLiveData<FollowStatus>()
 
-  fun hadFollowed(channelId: ChannelId) {
-    if (followStatus.value == null) {
-      followStatus.value = FollowStatus.NotFollow
-      return
+  @SuppressLint("CheckResult")
+  fun follow(channelId: ChannelId) {
+    val followEntity = FollowEntity(channelId)
+    followRepository.insertOrUpdate(followEntity).subscribeBy {
+      updateToLatestFollowStatus(channelId)
     }
-    if (followStatus.value == FollowStatus.NotFollow) {
-      followStatus.value = FollowStatus.AlreadyFollowed
-    } else {
-      followStatus.value = FollowStatus.NotFollow
+  }
+
+  @SuppressLint("CheckResult")
+  fun unfollow(channelId: ChannelId) {
+    val followEntity = FollowEntity(channelId)
+    followRepository.delete(followEntity).subscribeBy {
+      updateToLatestFollowStatus(channelId)
     }
+  }
+
+  @SuppressLint("CheckResult")
+  fun updateToLatestFollowStatus(channelId: ChannelId) {
+    followRepository.followStatus(channelId)
+      .observeOn(AndroidSchedulers.mainThread())
+      .subscribe {it ->
+        followStatus.value = it
+      }
   }
 }

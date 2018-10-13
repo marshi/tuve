@@ -7,12 +7,11 @@ import marshi.android.tuve.domain.FollowEntity
 
 @Entity
 class Follow(
-  @PrimaryKey val id: Int?,
-  @ColumnInfo(name = "channel_id") val channelId: String
+  @PrimaryKey @ColumnInfo(name = "channel_id") val channelId: String
 ) {
   companion object {
     fun from(entity: FollowEntity): Follow {
-      return Follow(null, entity.channelId.id)
+      return Follow(entity.channelId.id)
     }
   }
 }

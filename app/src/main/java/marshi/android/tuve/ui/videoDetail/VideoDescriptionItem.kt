@@ -23,11 +23,11 @@ class VideoDescriptionItem @Inject constructor(
       followButtonBinding.updateStatus(status)
     })
     followButtonBinding.followButton.setOnClickListener {
-      vm.hadFollowed(ChannelId(""))
+      vm.follow(ChannelId(""))
     }
     followButtonBinding.alreadyFollowButton.setOnClickListener {
-      vm.hadFollowed(ChannelId(""))
+      vm.unfollow(ChannelId(""))
     }
-    vm.hadFollowed(ChannelId(""))
+    vm.updateToLatestFollowStatus(ChannelId(""))
   }
 }
