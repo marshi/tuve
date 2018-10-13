@@ -19,6 +19,7 @@ ext {
     glide_version = "4.8.0"
     groupie_version = "2.1.0"
     androidx_core_version = "2.0.0"
+    stetho_version = "1.5.0"
 }
 
 android {
@@ -178,4 +179,7 @@ dependencies {
     kapt "com.github.bumptech.glide:compiler:${glide_version}"
 
     implementation "androidx.room:room-runtime:$androidx_core_version"
+
+    implementation "com.facebook.stetho:stetho:${stetho_version}"
+    implementation "com.facebook.stetho:stetho-okhttp3:${stetho_version}"
 }
