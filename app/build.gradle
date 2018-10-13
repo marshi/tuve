@@ -13,11 +13,12 @@ ext {
     appcompat_version = "1.0.0"
     constraintlayout_version = "1.1.3"
     lifecycle_version = "1.1.1"
-    kotlin_version = '1.2.60'
+    kotlin_version = '1.2.71'
     retrofit_version = "2.4.0"
     design_version = "1.0.0"
     glide_version = "4.8.0"
     groupie_version = "2.1.0"
+    androidx_core_version = "2.0.0"
 }
 
 android {
@@ -33,6 +34,7 @@ android {
         }
     }
     compileSdkVersion 28
+    buildToolsVersion "28.0.2"
     compileOptions {
         sourceCompatibility 1.8
         targetCompatibility 1.8
@@ -42,7 +44,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
-        versionName "1.0"
+        versionName "2.0"
 //        testInstrumentationRunner "android."
         buildConfigField("String", "youtubeApiKey", "\"${properties.getProperty('YOUTUBE_API_KEY', System.getenv("YOUTUBE_API_KEY"))}\"")
     }
@@ -53,6 +55,17 @@ android {
             debuggable false
             jniDebuggable false
             signingConfig signingConfigs.releasesign
+            matchingFallbacks = ['release']
+        }
+        debug {
+            matchingFallbacks = ['debug']
+        }
+    }
+    sourceSets {
+        main {
+            file('src/main/res-atomic')
+                    .listFiles()
+                    .each { res.srcDirs += it.path }
         }
     }
     lintOptions {
@@ -73,8 +86,8 @@ kapt {
 }
 
 dependencies {
+    implementation project(path: ":repository")
     implementation project(':domain')
-    implementation project(':repository')
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:28.0.0'
@@ -129,7 +142,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-reactivestreams:2.0.0'
 
     // optional - Test helpers for LiveData
-    testImplementation 'androidx.arch.core:core-testing:2.0.0'
+    testImplementation "androidx.arch.core:core-testing:${androidx_core_version}"
 
     // https://mvnrepository.com/artifact/com.rometools/rome
     implementation 'com.rometools:rome:1.11.0'
@@ -163,4 +176,6 @@ dependencies {
     implementation "com.xwray:groupie-databinding:${groupie_version}"
 
     kapt "com.github.bumptech.glide:compiler:${glide_version}"
+
+    implementation "androidx.room:room-runtime:$androidx_core_version"
 }

@@ -8,7 +8,7 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.recyclerview.widget.RecyclerView
 import marshi.android.tuve.R
 import marshi.android.tuve.databinding.RecommendVideoItemBinding
-import marshi.android.tuve.domain.RecommendVideoSnippetEntity
+import marshi.android.tuve.domain.entity.RecommendVideoSnippetEntity
 import marshi.android.tuve.ui.videoDetail.VideoDetailNavigator
 import javax.inject.Inject
 import javax.inject.Provider

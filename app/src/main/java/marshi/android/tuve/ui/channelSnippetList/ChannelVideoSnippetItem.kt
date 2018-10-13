@@ -3,7 +3,7 @@ package marshi.android.tuve.ui.channelSnippetList
 import com.xwray.groupie.databinding.BindableItem
 import marshi.android.tuve.R
 import marshi.android.tuve.databinding.VideoDetailBottomListItemBinding
-import marshi.android.tuve.domain.VideoSnippetEntity
+import marshi.android.tuve.domain.entity.VideoSnippetEntity
 import marshi.android.tuve.ui.videoDetail.VideoDetailNavigator
 import javax.inject.Provider
 

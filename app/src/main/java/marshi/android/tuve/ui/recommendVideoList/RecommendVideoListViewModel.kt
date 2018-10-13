@@ -4,9 +4,9 @@ import android.annotation.SuppressLint
 import androidx.lifecycle.MutableLiveData
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxkotlin.subscribeBy
-import marshi.android.tuve.domain.ChannelId
-import marshi.android.tuve.domain.RecommendVideoSnippetEntity
-import marshi.android.tuve.repository.youtube.YoutubeRepository
+import marshi.android.tuve.domain.entity.ChannelId
+import marshi.android.tuve.domain.entity.RecommendVideoSnippetEntity
+import marshi.android.tuve.repository.api.youtube.YoutubeRepository
 import javax.inject.Inject
 
 internal class RecommendVideoListViewModel @Inject constructor(

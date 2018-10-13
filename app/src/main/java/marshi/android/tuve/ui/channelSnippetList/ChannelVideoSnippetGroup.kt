@@ -5,7 +5,7 @@ import com.xwray.groupie.GroupDataObserver
 import com.xwray.groupie.Item
 import com.xwray.groupie.databinding.BindableItem
 import marshi.android.tuve.databinding.VideoDetailBottomListItemBinding
-import marshi.android.tuve.domain.VideoSnippetEntity
+import marshi.android.tuve.domain.entity.VideoSnippetEntity
 import marshi.android.tuve.ui.videoDetail.VideoDetailNavigator
 import javax.inject.Inject
 import javax.inject.Provider

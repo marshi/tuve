@@ -6,11 +6,13 @@ import marshi.android.tuve.ui.channelSnippetList.ChannelVideoSnippetGroup
 import javax.inject.Inject
 
 class VideoDetailNestedGroup @Inject constructor(
-        val channelVideoSnippetListGroup: ChannelVideoSnippetGroup
+    videoDescriptionItem: VideoDescriptionItem,
+    val channelVideoSnippetListGroup: ChannelVideoSnippetGroup
 ) : NestedGroup() {
 
     private val list = listOf(
-            channelVideoSnippetListGroup
+        videoDescriptionItem,
+        channelVideoSnippetListGroup
     )
 
     override fun getGroup(position: Int) = list[position]

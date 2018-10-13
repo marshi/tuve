@@ -11,7 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.android.support.AndroidSupportInjection
 import marshi.android.tuve.databinding.FragmentFeedMediaListBinding
-import marshi.android.tuve.domain.ChannelId
+import marshi.android.tuve.domain.entity.ChannelId
 import marshi.android.tuve.uiUtil.MarginDecoration
 import javax.inject.Inject
 

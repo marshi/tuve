@@ -9,11 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener
-import com.xwray.groupie.GroupAdapter
 import dagger.android.support.AndroidSupportInjection
 import marshi.android.tuve.databinding.FragmentVideoDetailBinding
-import marshi.android.tuve.domain.ChannelId
-import marshi.android.tuve.ui.channelSnippetList.ChannelVideoSnippetListAdapter
+import marshi.android.tuve.domain.entity.ChannelId
 import marshi.android.tuve.uiUtil.MarginDecoration
 import javax.inject.Inject
 

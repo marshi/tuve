@@ -4,7 +4,7 @@ import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import marshi.android.tuve.di.annotation.IdentityGson
-import marshi.android.tuve.repository.feedly.FeedlyApiClient
+import marshi.android.tuve.repository.api.feedly.FeedlyApiClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
