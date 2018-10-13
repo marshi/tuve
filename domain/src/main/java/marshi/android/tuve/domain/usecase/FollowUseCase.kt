@@ -6,7 +6,7 @@ import marshi.android.tuve.domain.repository.IFollowRepository
 import marshi.android.tuve.domain.valueobject.FollowStatus
 import javax.inject.Inject
 
-class FollowUsecase @Inject constructor(
+class FollowUseCase @Inject constructor(
   private val repositoy: IFollowRepository
 ) {
 
