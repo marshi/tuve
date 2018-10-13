@@ -7,22 +7,22 @@ import marshi.android.tuve.domain.valueobject.FollowStatus
 import javax.inject.Inject
 
 class FollowUseCase @Inject constructor(
-  private val repositoy: IFollowRepository
+  private val repository: IFollowRepository
 ) {
 
   fun follow(channelId: ChannelId): Single<FollowStatus> {
-    return repositoy.insertOrUpdate(channelId).flatMap {
+    return repository.insertOrUpdate(channelId).flatMap {
       fetchFollowStatus(channelId)
     }
   }
 
   fun unfollow(channelId: ChannelId): Single<FollowStatus> {
-    return repositoy.delete(channelId).flatMap {
+    return repository.delete(channelId).flatMap {
       fetchFollowStatus(channelId)
     }
   }
 
   fun fetchFollowStatus(channelId: ChannelId): Single<FollowStatus> {
-    return repositoy.followStatus(channelId)
+    return repository.followStatus(channelId)
   }
 }
