@@ -1,4 +1,4 @@
-package marshi.android.tuve.domain
+package marshi.android.tuve.domain.entity
 
 import java.net.URL
 

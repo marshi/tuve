@@ -4,8 +4,8 @@ import android.view.View
 import androidx.core.os.bundleOf
 import androidx.navigation.Navigation
 import marshi.android.tuve.R
-import marshi.android.tuve.domain.ChannelId
-import marshi.android.tuve.domain.VideoId
+import marshi.android.tuve.domain.entity.ChannelId
+import marshi.android.tuve.domain.entity.VideoId
 import javax.inject.Inject
 import javax.inject.Singleton
 

@@ -2,7 +2,7 @@ package marshi.android.tuve.atomic.molecule
 
 import androidx.core.view.isVisible
 import marshi.android.tuve.databinding.FollowButtonBinding
-import marshi.android.tuve.domain.FollowStatus
+import marshi.android.tuve.domain.valueobject.FollowStatus
 
 fun FollowButtonBinding.updateStatus(status: FollowStatus) {
   when (status) {

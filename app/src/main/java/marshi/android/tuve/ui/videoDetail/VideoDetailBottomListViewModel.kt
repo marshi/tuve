@@ -4,10 +4,9 @@ import android.annotation.SuppressLint
 import androidx.lifecycle.MutableLiveData
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxkotlin.subscribeBy
-import marshi.android.tuve.domain.ChannelId
-import marshi.android.tuve.domain.VideoSnippetEntity
+import marshi.android.tuve.domain.entity.ChannelId
+import marshi.android.tuve.domain.entity.VideoSnippetEntity
 import marshi.android.tuve.repository.api.youtube.YoutubeRepository
-import marshi.android.tuve.repository.database.follow.FollowRepository
 import javax.inject.Inject
 
 class VideoDetailBottomListViewModel @Inject constructor(

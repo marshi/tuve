@@ -2,7 +2,7 @@ package marshi.android.tuve.repository.api.feedly
 
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
-import marshi.android.tuve.domain.FeedMediaEntity
+import marshi.android.tuve.domain.entity.FeedMediaEntity
 import javax.inject.Inject
 
 class FeedlyRepository @Inject constructor(

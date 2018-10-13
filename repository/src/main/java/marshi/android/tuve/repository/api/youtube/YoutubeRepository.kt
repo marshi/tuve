@@ -2,11 +2,11 @@ package marshi.android.tuve.repository.api.youtube
 
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
-import marshi.android.tuve.domain.ChannelId
-import marshi.android.tuve.domain.RecommendVideoSnippetEntity
-import marshi.android.tuve.domain.VideoDetailEntity
-import marshi.android.tuve.domain.VideoId
-import marshi.android.tuve.domain.VideoSnippetEntity
+import marshi.android.tuve.domain.entity.ChannelId
+import marshi.android.tuve.domain.entity.RecommendVideoSnippetEntity
+import marshi.android.tuve.domain.entity.VideoDetailEntity
+import marshi.android.tuve.domain.entity.VideoId
+import marshi.android.tuve.domain.entity.VideoSnippetEntity
 import javax.inject.Inject
 import javax.inject.Singleton
 

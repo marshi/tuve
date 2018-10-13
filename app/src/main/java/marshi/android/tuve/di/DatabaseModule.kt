@@ -9,12 +9,6 @@ import marshi.android.tuve.repository.database.follow.FollowDao
 import javax.inject.Singleton
 
 @Module
-interface DatabaseModul {
-
-
-}
-
-@Module
 class DatabaseModule {
 
   @Provides

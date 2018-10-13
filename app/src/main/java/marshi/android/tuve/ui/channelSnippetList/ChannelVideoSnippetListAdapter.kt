@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import marshi.android.tuve.R
 import marshi.android.tuve.databinding.VideoDetailBottomListItemBinding
-import marshi.android.tuve.domain.VideoSnippetEntity
+import marshi.android.tuve.domain.entity.VideoSnippetEntity
 import marshi.android.tuve.ui.videoDetail.VideoDetailNavigator
 import javax.inject.Inject
 import javax.inject.Provider

@@ -8,13 +8,16 @@ import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [
-  AndroidSupportInjectionModule::class,
-  AppModule::class,
-  ApiModule::class,
-  ActivityModules::class,
-  DatabaseModule::class
-])
+@Component(
+  modules = [
+    AndroidSupportInjectionModule::class,
+    AppModule::class,
+    ApiModule::class,
+    ActivityModules::class,
+    DatabaseModule::class,
+    RepositoryModule::class
+  ]
+)
 interface AppComponent : AndroidInjector<App> {
 
   @Component.Builder
@@ -24,8 +27,6 @@ interface AppComponent : AndroidInjector<App> {
 
     fun build(): AppComponent
   }
-  
 
   override fun inject(instance: App)
-  
 }

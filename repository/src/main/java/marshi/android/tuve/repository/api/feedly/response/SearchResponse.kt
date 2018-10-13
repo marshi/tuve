@@ -1,6 +1,6 @@
 package marshi.android.tuve.repository.api.feedly.response
 
-import marshi.android.tuve.domain.FeedMediaEntity
+import marshi.android.tuve.domain.entity.FeedMediaEntity
 import java.net.URI
 
 class SearchResponse(

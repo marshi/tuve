@@ -1,6 +1,6 @@
 package marshi.android.tuve.repository.api.youtube.response
 
-import marshi.android.tuve.domain.VideoThumbnail
+import marshi.android.tuve.domain.entity.VideoThumbnail
 import java.net.URL
 
 class Thumbnails(
@@ -15,7 +15,7 @@ class Thumbnail(
     val height: Int
 ) {
     fun convert(): VideoThumbnail =
-        VideoThumbnail(
-            URL(url), width, height
-        )
+      VideoThumbnail(
+        URL(url), width, height
+      )
 }

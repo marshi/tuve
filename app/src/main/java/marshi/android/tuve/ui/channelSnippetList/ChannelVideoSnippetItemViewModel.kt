@@ -1,7 +1,7 @@
 package marshi.android.tuve.ui.channelSnippetList
 
 import androidx.lifecycle.MutableLiveData
-import marshi.android.tuve.domain.VideoSnippetEntity
+import marshi.android.tuve.domain.entity.VideoSnippetEntity
 import javax.inject.Inject
 
 class ChannelVideoSnippetItemViewModel @Inject constructor(){

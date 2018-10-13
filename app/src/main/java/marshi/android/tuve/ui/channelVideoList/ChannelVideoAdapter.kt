@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import marshi.android.tuve.R
 import marshi.android.tuve.databinding.FeedMediaItemBinding
-import marshi.android.tuve.domain.VideoSnippetEntity
+import marshi.android.tuve.domain.entity.VideoSnippetEntity
 import javax.inject.Inject
 
 class ChannelVideoAdapter @Inject constructor()

@@ -7,7 +7,7 @@ import marshi.android.tuve.R
 import marshi.android.tuve.atomic.molecule.updateStatus
 import marshi.android.tuve.databinding.VideoDescriptionBinding
 import marshi.android.tuve.di.FragmentScope
-import marshi.android.tuve.domain.ChannelId
+import marshi.android.tuve.domain.entity.ChannelId
 import javax.inject.Inject
 
 @FragmentScope
